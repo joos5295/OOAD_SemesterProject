@@ -3,6 +3,6 @@ project(OOAD_SemesterProject)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(dungeon src/main.cpp src/UI/Display.h src/UI/Cell.h src/UI/Color.h src/UI/Cell.cpp src/UI/Color.cpp src/UI/Input.h src/UI/Input.cpp src/UI/Display.cpp)
+add_executable(dungeon src/main.cpp src/UI/Display.h src/UI/Cell.h src/UI/Color.h src/UI/Cell.cpp src/UI/Color.cpp src/UI/Input.h src/UI/Input.cpp src/UI/Display.cpp src/Debug.h src/Debug.cpp)
 
 target_link_libraries(dungeon ncurses)

@@ -6,9 +6,14 @@
 #include <thread>
 #include <ncurses.h>
 #include "UI/Input.h"
+#include "Debug.h"
 
 int main() {
     Display::init();
+    Debug::init();
+    Debug::println("hello");
+    Debug::print("asdf");
+    Debug::print("zxcv");
     Input in;
     Cell g1('g', Color::Red, Color::Green);
     Cell g2('h', Color::White);
@@ -45,5 +50,6 @@ int main() {
     }
     Display::close();
     std::this_thread::sleep_for(std::chrono::seconds(5));
+    Debug::close();
     return 0;
 }
