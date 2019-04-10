@@ -4,40 +4,32 @@
 
 #include "Color.h"
 #include <iostream>
+#include <ncurses.h>
+#include "Display.h"
+#include <algorithm>
 
-void Color::print() {
-    switch (value) {
-        case Value::Black:
-            std::cout << "\033[30m";
-            break;
-        case Value::Red:
-            std::cout << "\033[31m";
-            break;
-        case Value::Green:
-            std::cout << "\033[32m";
-            break;
-        case Value::Yellow:
-            std::cout << "\033[33m";
-            break;
-        case Value::Blue:
-            std::cout << "\033[34m";
-            break;
-        case Value::Magenta:
-            std::cout << "\033[35m";
-            break;
-        case Value::Cyan:
-            std::cout << "\033[36m";
-            break;
-        case Value::White:
-            std::cout << "\033[37m";
-            break;
+std::vector<std::pair<int,int>> Color::colorIDs;
+
+int Color::getColorID(int f, int b) {
+    auto p = std::make_pair(f,b);
+    auto loc = std::find(colorIDs.begin(), colorIDs.end(), p);
+    if (loc != colorIDs.end()) {
+        return COLOR_PAIR(std::distance(colorIDs.begin(), loc));
+    } else {
+        colorIDs.push_back(p);
+        init_pair(colorIDs.size()-1, f, b);
+        return COLOR_PAIR(colorIDs.size()-1);
     }
 }
 
+void Color::activate() {
+    attron(getColorID(fore, back));
+}
+
 bool Color::operator==(const Color& with) const {
-    return value == with.value;
+    return fore == with.fore && back == with.back;
 }
 
 bool Color::operator!=(const Color& with) const {
-    return value != with.value;
+    return fore != with.fore || back != with.back;
 }
