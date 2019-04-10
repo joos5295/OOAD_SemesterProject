@@ -43,12 +43,12 @@ private:
     constexpr Color(Value f) : fore(f), back(Value::Black) {}
     constexpr Color(Value f, Value b) : fore(f), back(b) {}
 
-    void activate();
+    void activate() const;
 
     bool operator==(const Color&) const;
     bool operator!=(const Color&) const;
 
-    void debug_print() {
+    void debug_print() const {
         std::cout << fore << ' ' << back << std::endl;
     }
 };

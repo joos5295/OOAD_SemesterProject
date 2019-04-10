@@ -23,6 +23,7 @@
 #include "Cell.h"
 #include <iostream>
 #include <ncurses.h>
+#include "CellMatrix.h"
 
 class Display {
     static Color color;
@@ -39,28 +40,32 @@ public:
 
     // In order to use the array write methods, glyphs must have a known size at compile time.
 
-    template<int R, int C>
-    static void write(Cell (&glyphs) [R][C]) {
+    static void write(CellMatrix& m) {
+        m.reset();
+        int R = m.getRows();
+        int C = m.getCols();
         for (int r = 0; r < R; r++) {
             move(r, 0);
             for (int c = 0; c < C; c++) {
-                color = glyphs[r][c].print(color);
+                color = m.printNextCell(color);
             }
         }
     }
 
-    template<int R, int C>
-    static void write(Cell (&glyphs) [R][C], int x, int y) {
+    static void write(CellMatrix& m, int x, int y) {
+        m.reset();
+        int R = m.getRows();
+        int C = m.getCols();
         for (int r = 0; r < R; r++) {
             move(r + y, x);
             for (int c = 0; c < C; c++) {
-                color = glyphs[r][c].print(color);
+                color = m.printNextCell(color);
             }
         }
     }
 
-    static void write(Cell&);
-    static void write(Cell&, int, int);
+    static void write(Cell);
+    static void write(Cell, int, int);
 };
 
 #endif

@@ -6,39 +6,23 @@
 #include <thread>
 #include <ncurses.h>
 #include "UI/Input.h"
-#include "Debug.h"
+#include "Debug/Debug.h"
 
 int main() {
     Display::init();
     Debug::init();
-    Debug::println("hello");
-    Debug::print("asdf");
-    Debug::print("zxcv");
     Input in;
     Cell g1('g', Color::Red, Color::Green);
     Cell g2('h', Color::White);
     Cell g3('i', Color::Blue);
     Cell g4('j', Color::White);
     for (int count = 0; count < 100000; count++) {
-        g1.c++;
-        if (g1.c == 'z')
-            g1.c = 'a';
-        g2.c++;
-        if (g2.c == 'z')
-            g2.c = 'a';
-        g3.c++;
-        if (g3.c == 'z')
-            g3.c = 'a';
-        g4.c++;
-        if (g4.c == 'z')
-            g4.c = 'a';
+        Cell* arr = new Cell[6] {g1, g2, g3, g4, g1, g3};
+        CellMatrix m(arr, 3,2);
 
-        Cell glyphs[][2] = {{g1, g2},
-                              {g3, g4},
-                              {g1, g3}};
         Display::begin();
-        Display::write(glyphs);
-        Display::write(glyphs,2,2);
+        Display::write(m);
+        Display::write(m,2,2);
 
         Display::write(g2, 5, 4);
         Display::commit();

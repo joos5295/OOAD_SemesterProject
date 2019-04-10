@@ -2,7 +2,7 @@
 // Created by joel on 4/9/19.
 //
 
-#include "Input.h"
+#include "UI/Input.h"
 #include <ncurses.h>
 
 Input::Input() {

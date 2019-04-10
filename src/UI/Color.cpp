@@ -2,10 +2,10 @@
 // Created by Joel Courtney on 2019-04-09.
 //
 
-#include "Color.h"
+#include "UI/Color.h"
 #include <iostream>
 #include <ncurses.h>
-#include "Display.h"
+#include "UI/Display.h"
 #include <algorithm>
 
 std::vector<std::pair<int,int>> Color::colorIDs;
@@ -22,7 +22,7 @@ int Color::getColorID(int f, int b) {
     }
 }
 
-void Color::activate() {
+void Color::activate() const {
     attron(getColorID(fore, back));
 }
 

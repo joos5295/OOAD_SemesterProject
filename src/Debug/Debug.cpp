@@ -2,7 +2,7 @@
 // Created by joel on 4/10/19.
 //
 
-#include "Debug.h"
+#include "../../inc/Debug/Debug.h"
 #include <chrono>
 
 std::ofstream Debug::file;

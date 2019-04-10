@@ -8,7 +8,7 @@
 #include "Color.h"
 
 class Cell {
-public:
+private:
     char c;
     Color color;
 
@@ -18,7 +18,7 @@ public:
     explicit Cell(char, Color::Value, Color::Value); // Creates a colored character on a colored background
     explicit Cell(char, Color); // If you somehow end up with a color object on your hands, then this creates with that color.
 
-    Color print(Color);
+    Color print(Color) const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_CELL_H

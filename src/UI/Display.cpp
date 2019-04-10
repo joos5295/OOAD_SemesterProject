@@ -2,7 +2,7 @@
 // Created by joel on 4/9/19.
 //
 
-#include "Display.h"
+#include "UI/Display.h"
 
 Color Display::color;
 
@@ -31,12 +31,12 @@ void Display::commit() {
     refresh();
 }
 
-void Display::write(Cell& g) {
+void Display::write(Cell g) {
     move(0,0);
     color = g.print(color);
 }
 
-void Display::write(Cell& g, int x, int y) {
+void Display::write(Cell g, int x, int y) {
     move(x, y);
     color = g.print(color);
 }
