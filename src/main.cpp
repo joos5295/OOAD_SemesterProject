@@ -1,7 +1,7 @@
 #include <iostream>
 #include "UI/Display.h"
 
-#include "UI/Glyph.h"
+#include "UI/Cell.h"
 #include <chrono>
 #include <thread>
 #include <ncurses.h>
@@ -10,10 +10,10 @@
 int main() {
     Display::init();
     Input in;
-    Glyph g1('g', Color::Red, Color::Green);
-    Glyph g2('h', Color::White);
-    Glyph g3('i', Color::Blue);
-    Glyph g4('j', Color::White);
+    Cell g1('g', Color::Red, Color::Green);
+    Cell g2('h', Color::White);
+    Cell g3('i', Color::Blue);
+    Cell g4('j', Color::White);
     for (int count = 0; count < 100000; count++) {
         g1.c++;
         if (g1.c == 'z')
@@ -28,7 +28,7 @@ int main() {
         if (g4.c == 'z')
             g4.c = 'a';
 
-        Glyph glyphs[][2] = {{g1, g2},
+        Cell glyphs[][2] = {{g1, g2},
                               {g3, g4},
                               {g1, g3}};
         Display::begin();
@@ -37,7 +37,7 @@ int main() {
 
         Display::write(g2, 5, 4);
         Display::commit();
-        std::this_thread::sleep_for(std::chrono::milliseconds(40));
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
         char c = in.getInput();
         if (c) {
             break;

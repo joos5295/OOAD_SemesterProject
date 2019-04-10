@@ -31,12 +31,12 @@ void Display::commit() {
     refresh();
 }
 
-void Display::write(Glyph& g) {
+void Display::write(Cell& g) {
     move(0,0);
     color = g.print(color);
 }
 
-void Display::write(Glyph& g, int x, int y) {
+void Display::write(Cell& g, int x, int y) {
     move(x, y);
     color = g.print(color);
 }

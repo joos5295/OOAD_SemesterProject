@@ -20,7 +20,7 @@
 #ifndef OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 #define OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 
-#include "Glyph.h"
+#include "Cell.h"
 #include <iostream>
 #include <ncurses.h>
 
@@ -40,7 +40,7 @@ public:
     // In order to use the array write methods, glyphs must have a known size at compile time.
 
     template<int R, int C>
-    static void write(Glyph (&glyphs) [R][C]) {
+    static void write(Cell (&glyphs) [R][C]) {
         for (int r = 0; r < R; r++) {
             move(r, 0);
             for (int c = 0; c < C; c++) {
@@ -50,7 +50,7 @@ public:
     }
 
     template<int R, int C>
-    static void write(Glyph (&glyphs) [R][C], int x, int y) {
+    static void write(Cell (&glyphs) [R][C], int x, int y) {
         for (int r = 0; r < R; r++) {
             move(r + y, x);
             for (int c = 0; c < C; c++) {
@@ -59,8 +59,8 @@ public:
         }
     }
 
-    static void write(Glyph&);
-    static void write(Glyph&, int, int);
+    static void write(Cell&);
+    static void write(Cell&, int, int);
 };
 
 #endif
