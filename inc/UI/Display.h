@@ -40,32 +40,11 @@ public:
 
     // In order to use the array write methods, glyphs must have a known size at compile time.
 
-    static void write(CellMatrix& m) {
-        m.reset();
-        int R = m.getRows();
-        int C = m.getCols();
-        for (int r = 0; r < R; r++) {
-            move(r, 0);
-            for (int c = 0; c < C; c++) {
-                color = m.printNextCell(color);
-            }
-        }
-    }
+    static void write(const Cell&);
+    static void write(const Cell&, int, int);
 
-    static void write(CellMatrix& m, int x, int y) {
-        m.reset();
-        int R = m.getRows();
-        int C = m.getCols();
-        for (int r = 0; r < R; r++) {
-            move(r + y, x);
-            for (int c = 0; c < C; c++) {
-                color = m.printNextCell(color);
-            }
-        }
-    }
-
-    static void write(Cell);
-    static void write(Cell, int, int);
+    static void write(const CellMatrix& m);
+    static void write(const CellMatrix& m, int x, int y);
 };
 
 #endif

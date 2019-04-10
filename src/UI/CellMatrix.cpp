@@ -5,17 +5,15 @@
 #include "UI/CellMatrix.h"
 #include "Debug/Debug.h"
 
-CellMatrix::CellMatrix(Cell* cs, int r, int c) : cells(cs), R(r), C(c) {}
-
-CellMatrix::~CellMatrix() {
-    delete cells;
+CellMatrix::CellMatrix(std::vector<Cell> cs, int r, int c) : cells(std::move(cs)), R(r), C(c) {
+    Debug::println("making new matrix");
 }
 
-void CellMatrix::reset() {
+void CellMatrix::reset() const {
     next = 0;
 }
 
-Color CellMatrix::printNextCell(Color prev) {
+Color CellMatrix::printNextCell(Color prev) const {
     if (next < R*C)
         return cells[next++].print(prev);
     else {

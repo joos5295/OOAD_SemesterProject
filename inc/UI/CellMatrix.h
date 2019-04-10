@@ -6,21 +6,21 @@
 #define OOAD_SEMESTERPROJECT_CELLMATRIX_H
 
 #include "Cell.h"
+#include <vector>
 
 class CellMatrix {
     int R = 0;
     int C = 0;
 
-    Cell* cells;
+    const std::vector<Cell> cells;
 
-    int next = 0;
+    mutable int next = 0;
 
 public:
-    CellMatrix(Cell*,int,int);
-    ~CellMatrix();
+    CellMatrix(std::vector<Cell>,int,int);
 
-    void reset();
-    Color printNextCell(Color);
+    void reset() const;
+    Color printNextCell(Color) const;
 
     int getRows() const;
     int getCols() const;

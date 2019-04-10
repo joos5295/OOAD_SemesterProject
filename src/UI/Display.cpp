@@ -31,12 +31,36 @@ void Display::commit() {
     refresh();
 }
 
-void Display::write(Cell g) {
+void Display::write(const Cell& g) {
     move(0,0);
     color = g.print(color);
 }
 
-void Display::write(Cell g, int x, int y) {
+void Display::write(const Cell& g, int x, int y) {
     move(x, y);
     color = g.print(color);
+}
+
+void Display::write(const CellMatrix& m) {
+    m.reset();
+    int R = m.getRows();
+    int C = m.getCols();
+    for (int r = 0; r < R; r++) {
+        move(r, 0);
+        for (int c = 0; c < C; c++) {
+            color = m.printNextCell(color);
+        }
+    }
+}
+
+void Display::write(const CellMatrix& m, int x, int y) {
+    m.reset();
+    int R = m.getRows();
+    int C = m.getCols();
+    for (int r = 0; r < R; r++) {
+        move(r + y, x);
+        for (int c = 0; c < C; c++) {
+            color = m.printNextCell(color);
+        }
+    }
 }

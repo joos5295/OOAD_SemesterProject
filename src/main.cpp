@@ -7,6 +7,7 @@
 #include <ncurses.h>
 #include "UI/Input.h"
 #include "Debug/Debug.h"
+#include "Imports/AssetManager.h"
 
 int main() {
     Display::init();
@@ -16,14 +17,14 @@ int main() {
     Cell g2('h', Color::White);
     Cell g3('i', Color::Blue);
     Cell g4('j', Color::White);
+    std::vector<Cell> arr = {g1, g2, g3, g4, g1, g3};
+    CellMatrix m(arr, 3,2);
     for (int count = 0; count < 100000; count++) {
-        Cell* arr = new Cell[6] {g1, g2, g3, g4, g1, g3};
-        CellMatrix m(arr, 3,2);
-
         Display::begin();
         Display::write(m);
         Display::write(m,2,2);
-
+        const CellMatrix test = AssetManager::load("demo.txt");
+        Display::write(test,10,10);
         Display::write(g2, 5, 4);
         Display::commit();
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
