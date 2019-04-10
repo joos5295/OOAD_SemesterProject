@@ -90,7 +90,6 @@ void AssetManager::read(std::string s) {
             Debug::close();
             exit(-1);
         }
-        Debug::println("wut");
     }
     CellMatrix m(cells, H, W);
     assets.insert(std::make_pair(s,m));

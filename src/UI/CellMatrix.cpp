@@ -5,9 +5,7 @@
 #include "UI/CellMatrix.h"
 #include "Debug/Debug.h"
 
-CellMatrix::CellMatrix(std::vector<Cell> cs, int r, int c) : cells(std::move(cs)), R(r), C(c) {
-    Debug::println("making new matrix");
-}
+CellMatrix::CellMatrix(std::vector<Cell> cs, int r, int c) : cells(std::move(cs)), R(r), C(c) {}
 
 void CellMatrix::reset() const {
     next = 0;
