@@ -31,7 +31,7 @@ int main() {
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
      */
-    for (int count = 0; count < 100; count++) {
+    for (int count = 0; count < 1000; count++) {
         Display::begin();
         Display::write(level1);
         Display::commit();
