@@ -19,7 +19,7 @@ int main() {
     Cell g4('j', Color::White);
     std::vector<Cell> arr = {g1, g2, g3, g4, g1, g3};
     CellMatrix m(arr, 3,2);
-    CellMatrix level1 = AsciiManager::loadTerain("Level_1.txt");
+    CellMatrix level1 = AsciiManager::loadTerrain("Level_1.txt");
     /*for (int count = 0; count < 100; count++) {
         Display::begin();
         Display::write(m);
@@ -44,7 +44,6 @@ int main() {
 
 
     Display::close();
-    std::this_thread::sleep_for(std::chrono::seconds(5));
     Debug::close();
     return 0;
 }

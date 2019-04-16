@@ -15,10 +15,6 @@ void Display::init() {
 
 void Display::close() {
     endwin();
-    std::cout << Color::colorIDs.size() << std::endl;
-    for (auto c : Color::colorIDs) {
-        std::cout << c.first << ' ' << c.second << std::endl;
-    }
 }
 
 void Display::begin() {

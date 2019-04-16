@@ -8,7 +8,7 @@
 
 std::unordered_map<std::string,CellMatrix> AsciiManager::assets;
 
-void AsciiManager::read(std::string s) {
+void AsciiManager::readArt(std::string s) {
     std::string path = "../assets/" + s;
     int W = -1;
     int H = 0;
@@ -95,14 +95,14 @@ void AsciiManager::read(std::string s) {
     assets.insert(std::make_pair(s,m));
 }
 
-const CellMatrix AsciiManager::load(std::string s) {
+const CellMatrix AsciiManager::loadArt(std::string s) {
     if (!assets.count(s)) {
-        read(s);
+        readArt(s);
     }
     return assets.at(s);
 }
 
-void AsciiManager::readTerain(std::string s) {
+void AsciiManager::readTerrain(std::string s) {
 
     //Tiles
     Cell c = Cell(' ', Color::Black, Color::White);
@@ -173,9 +173,9 @@ void AsciiManager::readTerain(std::string s) {
     assets.insert(std::make_pair(s,m));
 }
 
-const CellMatrix AsciiManager::loadTerain(std::string s) {
+const CellMatrix AsciiManager::loadTerrain(std::string s) {
     if (!assets.count(s)) {
-        readTerain(s);
+        readTerrain(s);
     }
     return assets.at(s);
 }

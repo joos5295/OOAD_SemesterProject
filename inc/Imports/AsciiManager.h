@@ -39,12 +39,12 @@
 class AsciiManager {
     static std::unordered_map<std::string,CellMatrix> assets;
 
-    static void read(std::string);
-    static void readTerain(std::string);
+    static void readArt(std::string);
+    static void readTerrain(std::string);
 
 public:
-    static const CellMatrix load(std::string);
-    static const CellMatrix loadTerain(std::string);
+    static const CellMatrix loadArt(std::string);
+    static const CellMatrix loadTerrain(std::string);
 
 };
 
