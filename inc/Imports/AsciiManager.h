@@ -5,7 +5,7 @@
 /*
  * To import an ascii art text file:
  *  Save it in assets/{path}
- *  Call AssetManager::load(path)
+ *  Call AsciiManager::load(path)
  *  Use returned CellMatrix
  *  
  * File Format:
@@ -36,13 +36,15 @@
 #include <string>
 #include "UI/CellMatrix.h"
 
-class AssetManager {
+class AsciiManager {
     static std::unordered_map<std::string,CellMatrix> assets;
 
     static void read(std::string);
+    static void readTerain(std::string);
 
 public:
     static const CellMatrix load(std::string);
+    static const CellMatrix loadTerain(std::string);
 
 };
 

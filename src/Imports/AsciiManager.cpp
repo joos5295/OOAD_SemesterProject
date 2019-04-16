@@ -3,12 +3,12 @@
 //
 
 #include <fstream>
-#include "Imports/AssetManager.h"
+#include "Imports/AsciiManager.h"
 #include "Debug/Debug.h"
 
-std::unordered_map<std::string,CellMatrix> AssetManager::assets;
+std::unordered_map<std::string,CellMatrix> AsciiManager::assets;
 
-void AssetManager::read(std::string s) {
+void AsciiManager::read(std::string s) {
     std::string path = "../assets/" + s;
     int W = -1;
     int H = 0;
@@ -95,7 +95,28 @@ void AssetManager::read(std::string s) {
     assets.insert(std::make_pair(s,m));
 }
 
-const CellMatrix AssetManager::load(std::string s) {
+const CellMatrix AsciiManager::load(std::string s) {
+    if (!assets.count(s)) {
+        read(s);
+    }
+    return assets.at(s);
+}
+
+void AsciiManager::readTerain(std::string s) {
+    std::string path = "../assets/" + s;
+    int W = -1;
+    int H = 0;
+    std::ifstream file(path);
+    if (!file.is_open()) {
+        Debug::print("Asset File ");
+        Debug::print(s);
+        Debug::println(" not found.");
+        Debug::close();
+        exit(-1);
+    }
+}
+
+const CellMatrix AsciiManager::loadTerain(std::string s) {
     if (!assets.count(s)) {
         read(s);
     }
