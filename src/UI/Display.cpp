@@ -27,17 +27,17 @@ void Display::commit() {
     refresh();
 }
 
-void Display::write(const Glyph& g) {
+void Display::write(const Cell& g) {
     move(0,0);
     color = g.print(color);
 }
 
-void Display::write(const Glyph& g, int x, int y) {
+void Display::write(const Cell& g, int x, int y) {
     move(x, y);
     color = g.print(color);
 }
 
-void Display::write(const GlyphMap& m) {
+void Display::write(const CellMap& m) {
     m.reset();
     int R = m.getRows();
     int C = m.getCols();
@@ -49,7 +49,7 @@ void Display::write(const GlyphMap& m) {
     }
 }
 
-void Display::write(const GlyphMap& m, int x, int y) {
+void Display::write(const CellMap& m, int x, int y) {
     m.reset();
     int R = m.getRows();
     int C = m.getCols();
