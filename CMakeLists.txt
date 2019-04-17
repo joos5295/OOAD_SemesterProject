@@ -7,6 +7,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 FILE(GLOB_RECURSE ALL_FILES inc/*.h src/*.cpp)
 
-add_executable(dungeon ${ALL_FILES} src/Game/Game.cpp inc/Game/Game.h src/Game/Entity.cpp inc/Game/Entity.h)
+add_executable(dungeon ${ALL_FILES} src/Game/Game.cpp inc/Game/Game.h src/Game/Entity.cpp inc/Game/Entity.h src/Game/Player.cpp inc/Game/Player.h)
 
 target_link_libraries(dungeon ncurses)

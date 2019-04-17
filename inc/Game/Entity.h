@@ -5,8 +5,6 @@
 #ifndef OOAD_SEMESTERPROJECT_ENTITY_H
 #define OOAD_SEMESTERPROJECT_ENTITY_H
 
-#endif //OOAD_SEMESTERPROJECT_ENTITY_H
-
 class Entity{
 private:
     int health;
@@ -14,3 +12,5 @@ private:
 public:
     void takeDamage(int dmg);
 };
+
+#endif //OOAD_SEMESTERPROJECT_ENTITY_H

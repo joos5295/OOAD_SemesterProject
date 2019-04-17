@@ -5,8 +5,6 @@
 #ifndef OOAD_SEMESTERPROJECT_GAME_H
 #define OOAD_SEMESTERPROJECT_GAME_H
 
-#endif //OOAD_SEMESTERPROJECT_GAME_H
-
 class Game {
 
 private:
@@ -19,3 +17,5 @@ private:
 
 
 };
+
+#endif //OOAD_SEMESTERPROJECT_GAME_H
