@@ -12,6 +12,12 @@ class Player : public Entity{
 private:
     int posX;
     int posY;
+    //Level level;
+
+public:
+    int getX();
+    int getY();
+    void move();
 };
 
 #endif //OOAD_SEMESTERPROJECT_PLAYER_H
