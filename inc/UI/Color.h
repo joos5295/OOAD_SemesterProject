@@ -4,7 +4,7 @@
 
 /*
  * Responsible for foreground / background color information.
- * Outside of the Cell and Display classes, all that matters
+ * Outside of the Glyph and Display classes, all that matters
  * is the Color::Value enum, which is accessed using Color::Red, etc.
  */
 
@@ -16,7 +16,7 @@
 #include <vector>
 
 class Color {
-    friend class Cell;
+    friend class Glyph;
     friend class Display;
 
     static std::vector<std::pair<int,int>> colorIDs;
