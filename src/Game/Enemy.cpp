@@ -3,4 +3,4 @@
 //
 
 #include "Game/Enemy.h"
-int Enemy::attack() {return attackDamage}
+int Enemy::attack() {return attackDamage;}

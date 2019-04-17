@@ -5,5 +5,5 @@
 #include "Game/Entity.h"
 
 void Entity::takeDamage(int dmg) {
-    health -= dmg
+    health -= dmg;
 }
