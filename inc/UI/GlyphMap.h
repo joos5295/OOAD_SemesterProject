@@ -7,23 +7,15 @@
 
 #include "Glyph.h"
 #include <vector>
+#include "CellMap.h"
 
-class GlyphMap {
-    int R = 0;
-    int C = 0;
-
+class GlyphMap : public CellMap {
     const std::vector<Glyph> cells;
-
-    mutable int next = 0;
 
 public:
     GlyphMap(std::vector<Glyph>,int,int);
 
-    void reset() const;
-    Color printNextCell(Color) const;
-
-    int getRows() const;
-    int getCols() const;
+    Color printNextCell(Color) const override;
 };
 
 #endif //OOAD_SEMESTERPROJECT_GLYPHMAP_H
