@@ -3,3 +3,18 @@
 //
 
 #include "Game/Game.h"
+
+void Game::setActiveState(int s){
+    if(s == 0)
+    {
+        activeState = dungeon;
+    }
+    else if(s == 1)
+    {
+        activeState = menu;
+    }
+    else
+    {
+        activeState = encounter;
+    }
+}

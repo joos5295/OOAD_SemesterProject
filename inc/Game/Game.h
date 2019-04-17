@@ -7,13 +7,18 @@
 
 #include "GameState/GameState.h"
 #include "GameState/DungeonState.h"
+#include "GameState/MenuState.h"
+#include "GameState/EncounterState.h"
 
 class Game {
 
 private:
     GameState activeState;
     DungeonState dungeon;
+    MenuState menu;
+    EncounterState encounter;
 
+    void setActiveState(int s);
 
 };
 
