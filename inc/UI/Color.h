@@ -36,13 +36,13 @@ public:
         Empty
     };
 
-private:
-    Value fore;
-    Value back;
-
     Color() : fore(Value::Empty), back(Value::Empty) {}
     constexpr Color(Value f) : fore(f), back(Value::Black) {}
     constexpr Color(Value f, Value b) : fore(f), back(b) {}
+
+private:
+    Value fore;
+    Value back;
 
     void activate() const;
 

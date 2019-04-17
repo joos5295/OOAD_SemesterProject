@@ -3,11 +3,15 @@
 //
 
 #include <fstream>
+#include <Game/Terrain/Empty.h>
 #include "Imports/AssetManager.h"
 #include "Debug/Debug.h"
+#include "Game/Terrain/Wall.h"
+#include "Game/Terrain/Grass.h"
+#include "Game/Terrain/Empty.h"
 
 std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
-std::unordered_map<std::string,GlyphMap> AssetManager::terrainMaps;
+std::unordered_map<std::string,TerrainMap> AssetManager::terrainMaps;
 
 void AssetManager::readArt(std::string s) {
     std::string path = "../assets/" + s;
@@ -106,10 +110,9 @@ const GlyphMap AssetManager::loadArt(std::string s) {
 void AssetManager::readTerrain(std::string s) {
 
     //Tiles
-    Glyph c = Glyph(' ', Color::Black, Color::White);
-    Glyph g = Glyph('w', Color::Green, Color::Black);
-    Glyph v = Glyph(' ', Color::Black, Color::Black);
-    Glyph w = Glyph('X', Color::Black, Color::White);
+    Terrain* empty = Empty::getInstance();
+    Terrain* wall = Wall::getInstance();
+    Terrain* grass = Grass::getInstance();
 
     std::string path = "../assets/" + s;
     int W = -1;
@@ -122,9 +125,7 @@ void AssetManager::readTerrain(std::string s) {
         Debug::close();
         exit(-1);
     }
-    std::vector<Glyph> cells;
-    Color::Value fore = Color::White;
-    Color::Value back = Color::Black;
+    std::vector<Terrain*> cells;
     std::string line;
     while (!file.eof()) {
         std::getline(file, line);
@@ -133,33 +134,28 @@ void AssetManager::readTerrain(std::string s) {
         for (auto i = line.begin(); i != line.end(); i++) {
             char ch = *i;
             switch (ch) {
-                case 'c':
-                    cells.push_back(c);
-                    width++;
-                    break;
-                case 'g':
-                    cells.push_back(g);
-                    width++;
-                    break;
-                case 'v':
-                    cells.push_back(v);
+                case ' ':
+                    cells.push_back(empty);
                     width++;
                     break;
                 case 'w':
-                    cells.push_back(w);
+                    cells.push_back(wall);
+                    width++;
+                    break;
+                case 'g':
+                    cells.push_back(grass);
                     width++;
                     break;
                 default:
-                    cells.emplace_back(ch, fore, back);
-                    width++;
-                    break;
+                    Debug::println("unrecognized terrain char");
+                    exit(1);
             }
         }
         if (W == -1)
             W = width;
         else if (width < W) {
             for (int i = 0; i < W - width; i++) {
-                cells.emplace_back(' ', Color::Black, Color::Black);
+                cells.push_back(empty);
             }
         }
         else if (width > W) {
@@ -170,11 +166,11 @@ void AssetManager::readTerrain(std::string s) {
             exit(-1);
         }
     }
-    GlyphMap m(cells, H, W);
+    TerrainMap m(cells, H, W);
     terrainMaps.insert(std::make_pair(s,m));
 }
 
-const GlyphMap AssetManager::loadTerrain(std::string s) {
+const TerrainMap AssetManager::loadTerrain(std::string s) {
     if (!terrainMaps.count(s)) {
         readTerrain(s);
     }

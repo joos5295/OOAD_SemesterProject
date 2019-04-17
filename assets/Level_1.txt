@@ -1,17 +1,17 @@
-vvvvvvvvevvvvvvvv
-vcccccccccccccccv
-vcgggggggggggggcv
-vcgwwwwwgwwwwwgcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgggggggggggggcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgwgggggggggwgcv
-vcgwwwwwgwwwwwgcv
-vcgggggggggggggcv
-vcccccccccccccccv
-vvvvvvvvsvvvvvvvv
+wwwwwwwwwwwwwwwww
+wggggggg gggggggw
+wg             gw
+wg wwwww wwwww gw
+wg w         w gw
+wg w         w gw
+wg w         w gw
+wg w         w gw
+wg             gw
+wg w         w gw
+wg w         w gw
+wg w         w gw
+wg w         w gw
+wg wwwww wwwww gw
+wg             gw
+wggggggg gggggggw
+wwwwwwwwwwwwwwwww

@@ -19,7 +19,7 @@ int main() {
     Glyph g4('j', Color::White);
     std::vector<Glyph> arr = {g1, g2, g3, g4, g1, g3};
     GlyphMap m(arr, 3,2);
-    GlyphMap level1 = AssetManager::loadTerrain("Level_1.txt");
+    TerrainMap level1 = AssetManager::loadTerrain("Level_1.txt");
     /*for (int count = 0; count < 100; count++) {
         Display::begin();
         Display::write(m);

@@ -5,14 +5,14 @@
 /*
  * To import an ascii art text file:
  *  Save it in assets/{path}
- *  Call AssetManager::load(path)
+ *  Call AssetManager::loadArt(path)
  *  Use returned GlyphMap
  *  
  * File Format:
  *  Line widths must be no more than the width of the first line
  *  If line widths are shorter than the first line, it is padded with blanks
  * 
- * To changes colors:
+ * To change colors:
  *  Place a F (for foreground) or B (for background)
  *  Followed by the tag of the color:
  *      b = black
@@ -29,6 +29,24 @@
  *  See assets/demo.txt for an example.
  */
 
+/*
+ * To import an terrain map text file:
+ *  Save it in assets/{path}
+ *  Call AssetManager::loadTerrain(path)
+ *  Use returned TerrainMap
+ *
+ * File Format:
+ *  Line widths must be no more than the width of the first line
+ *  If line widths are shorter than the first line, it is padded with Empty terrain
+ *
+ * Terrain Key:
+ *  ' ' = Empty
+ *  'g' = Grass
+ *  'w' = Wall
+ *
+ *  See assets/Level_1.txt for an example.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_ASSETMANAGER_H
 #define OOAD_SEMESTERPROJECT_ASSETMANAGER_H
 
@@ -39,14 +57,14 @@
 
 class AssetManager {
     static std::unordered_map<std::string,GlyphMap> glyphMaps;
-    static std::unordered_map<std::string,GlyphMap> terrainMaps;
+    static std::unordered_map<std::string,TerrainMap> terrainMaps;
 
     static void readArt(std::string);
     static void readTerrain(std::string);
 
 public:
     static const GlyphMap loadArt(std::string);
-    static const GlyphMap loadTerrain(std::string);
+    static const TerrainMap loadTerrain(std::string);
 
 };
 
