@@ -1,8 +1,0 @@
-//
-// Created by user on 4/16/19.
-//
-
-#ifndef OOAD_SEMESTERPROJECT_GAME_H
-#define OOAD_SEMESTERPROJECT_GAME_H
-
-#endif //OOAD_SEMESTERPROJECT_GAME_H
