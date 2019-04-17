@@ -5,15 +5,14 @@
 #ifndef OOAD_SEMESTERPROJECT_GAME_H
 #define OOAD_SEMESTERPROJECT_GAME_H
 
+#include "GameState/GameState.h"
+#include "GameState/DungeonState.h"
+
 class Game {
 
 private:
-    /**
-     * Dungeon dungeon;
-     * Menu menu;
-     * Encounter encounter;
-     * State activeState;
-     */
+    GameState activeState;
+    DungeonState dungeon;
 
 
 };
