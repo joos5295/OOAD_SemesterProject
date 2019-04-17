@@ -6,7 +6,8 @@
 #include "Imports/AssetManager.h"
 #include "Debug/Debug.h"
 
-std::unordered_map<std::string,GlyphMap> AssetManager::assets;
+std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
+std::unordered_map<std::string,GlyphMap> AssetManager::terrainMaps;
 
 void AssetManager::readArt(std::string s) {
     std::string path = "../assets/" + s;
@@ -92,14 +93,14 @@ void AssetManager::readArt(std::string s) {
         }
     }
     GlyphMap m(cells, H, W);
-    assets.insert(std::make_pair(s,m));
+    glyphMaps.insert(std::make_pair(s,m));
 }
 
 const GlyphMap AssetManager::loadArt(std::string s) {
-    if (!assets.count(s)) {
+    if (!glyphMaps.count(s)) {
         readArt(s);
     }
-    return assets.at(s);
+    return glyphMaps.at(s);
 }
 
 void AssetManager::readTerrain(std::string s) {
@@ -170,12 +171,12 @@ void AssetManager::readTerrain(std::string s) {
         }
     }
     GlyphMap m(cells, H, W);
-    assets.insert(std::make_pair(s,m));
+    terrainMaps.insert(std::make_pair(s,m));
 }
 
 const GlyphMap AssetManager::loadTerrain(std::string s) {
-    if (!assets.count(s)) {
+    if (!terrainMaps.count(s)) {
         readTerrain(s);
     }
-    return assets.at(s);
+    return terrainMaps.at(s);
 }

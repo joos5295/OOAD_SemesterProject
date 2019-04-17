@@ -35,9 +35,11 @@
 #include <unordered_map>
 #include <string>
 #include "UI/GlyphMap.h"
+#include "Game/Terrain/TerrainMap.h"
 
 class AssetManager {
-    static std::unordered_map<std::string,GlyphMap> assets;
+    static std::unordered_map<std::string,GlyphMap> glyphMaps;
+    static std::unordered_map<std::string,GlyphMap> terrainMaps;
 
     static void readArt(std::string);
     static void readTerrain(std::string);

@@ -11,7 +11,7 @@
 class Terrain : public Cell {
 public:
     virtual bool canEnter() const = 0;
-    virtual void enter(Player) const = 0;
+    virtual void enter(Player*) const = 0;
 };
 
 #endif //OOAD_SEMESTERPROJECT_TERRAIN_H
