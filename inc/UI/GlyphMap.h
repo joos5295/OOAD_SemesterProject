@@ -2,22 +2,22 @@
 // Created by joel on 4/10/19.
 //
 
-#ifndef OOAD_SEMESTERPROJECT_CELLMATRIX_H
-#define OOAD_SEMESTERPROJECT_CELLMATRIX_H
+#ifndef OOAD_SEMESTERPROJECT_GLYPHMAP_H
+#define OOAD_SEMESTERPROJECT_GLYPHMAP_H
 
-#include "Cell.h"
+#include "Glyph.h"
 #include <vector>
 
-class CellMatrix {
+class GlyphMap {
     int R = 0;
     int C = 0;
 
-    const std::vector<Cell> cells;
+    const std::vector<Glyph> cells;
 
     mutable int next = 0;
 
 public:
-    CellMatrix(std::vector<Cell>,int,int);
+    GlyphMap(std::vector<Glyph>,int,int);
 
     void reset() const;
     Color printNextCell(Color) const;
@@ -26,4 +26,4 @@ public:
     int getCols() const;
 };
 
-#endif //OOAD_SEMESTERPROJECT_CELLMATRIX_H
+#endif //OOAD_SEMESTERPROJECT_GLYPHMAP_H

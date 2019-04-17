@@ -3,12 +3,12 @@
 //
 
 #include <fstream>
-#include "Imports/AsciiManager.h"
+#include "Imports/AssetManager.h"
 #include "Debug/Debug.h"
 
-std::unordered_map<std::string,CellMatrix> AsciiManager::assets;
+std::unordered_map<std::string,GlyphMap> AssetManager::assets;
 
-void AsciiManager::readArt(std::string s) {
+void AssetManager::readArt(std::string s) {
     std::string path = "../assets/" + s;
     int W = -1;
     int H = 0;
@@ -20,7 +20,7 @@ void AsciiManager::readArt(std::string s) {
         Debug::close();
         exit(-1);
     }
-    std::vector<Cell> cells;
+    std::vector<Glyph> cells;
     Color::Value fore = Color::White;
     Color::Value back = Color::Black;
     std::string line;
@@ -91,24 +91,24 @@ void AsciiManager::readArt(std::string s) {
             exit(-1);
         }
     }
-    CellMatrix m(cells, H, W);
+    GlyphMap m(cells, H, W);
     assets.insert(std::make_pair(s,m));
 }
 
-const CellMatrix AsciiManager::loadArt(std::string s) {
+const GlyphMap AssetManager::loadArt(std::string s) {
     if (!assets.count(s)) {
         readArt(s);
     }
     return assets.at(s);
 }
 
-void AsciiManager::readTerrain(std::string s) {
+void AssetManager::readTerrain(std::string s) {
 
     //Tiles
-    Cell c = Cell(' ', Color::Black, Color::White);
-    Cell g = Cell('w', Color::Green, Color::Black);
-    Cell v = Cell(' ', Color::Black, Color::Black);
-    Cell w = Cell('X', Color::Black, Color::White);
+    Glyph c = Glyph(' ', Color::Black, Color::White);
+    Glyph g = Glyph('w', Color::Green, Color::Black);
+    Glyph v = Glyph(' ', Color::Black, Color::Black);
+    Glyph w = Glyph('X', Color::Black, Color::White);
 
     std::string path = "../assets/" + s;
     int W = -1;
@@ -121,7 +121,7 @@ void AsciiManager::readTerrain(std::string s) {
         Debug::close();
         exit(-1);
     }
-    std::vector<Cell> cells;
+    std::vector<Glyph> cells;
     Color::Value fore = Color::White;
     Color::Value back = Color::Black;
     std::string line;
@@ -169,11 +169,11 @@ void AsciiManager::readTerrain(std::string s) {
             exit(-1);
         }
     }
-    CellMatrix m(cells, H, W);
+    GlyphMap m(cells, H, W);
     assets.insert(std::make_pair(s,m));
 }
 
-const CellMatrix AsciiManager::loadTerrain(std::string s) {
+const GlyphMap AssetManager::loadTerrain(std::string s) {
     if (!assets.count(s)) {
         readTerrain(s);
     }

@@ -5,8 +5,8 @@
 /*
  * To import an ascii art text file:
  *  Save it in assets/{path}
- *  Call AsciiManager::load(path)
- *  Use returned CellMatrix
+ *  Call AssetManager::load(path)
+ *  Use returned GlyphMap
  *  
  * File Format:
  *  Line widths must be no more than the width of the first line
@@ -34,17 +34,17 @@
 
 #include <unordered_map>
 #include <string>
-#include "UI/CellMatrix.h"
+#include "UI/GlyphMap.h"
 
-class AsciiManager {
-    static std::unordered_map<std::string,CellMatrix> assets;
+class AssetManager {
+    static std::unordered_map<std::string,GlyphMap> assets;
 
     static void readArt(std::string);
     static void readTerrain(std::string);
 
 public:
-    static const CellMatrix loadArt(std::string);
-    static const CellMatrix loadTerrain(std::string);
+    static const GlyphMap loadArt(std::string);
+    static const GlyphMap loadTerrain(std::string);
 
 };
 

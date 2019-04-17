@@ -20,10 +20,10 @@
 #ifndef OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 #define OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 
-#include "Cell.h"
+#include "Glyph.h"
 #include <iostream>
 #include <ncurses.h>
-#include "CellMatrix.h"
+#include "GlyphMap.h"
 
 class Display {
     static Color color;
@@ -40,11 +40,11 @@ public:
 
     // In order to use the array write methods, glyphs must have a known size at compile time.
 
-    static void write(const Cell&);
-    static void write(const Cell&, int, int);
+    static void write(const Glyph&);
+    static void write(const Glyph&, int, int);
 
-    static void write(const CellMatrix& m);
-    static void write(const CellMatrix& m, int x, int y);
+    static void write(const GlyphMap& m);
+    static void write(const GlyphMap& m, int x, int y);
 };
 
 #endif
