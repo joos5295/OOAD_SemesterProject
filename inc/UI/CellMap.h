@@ -1,0 +1,8 @@
+//
+// Created by Joel Courtney on 2019-04-16.
+//
+
+#ifndef OOAD_SEMESTERPROJECT_CELLMAP_H
+#define OOAD_SEMESTERPROJECT_CELLMAP_H
+
+#endif //OOAD_SEMESTERPROJECT_CELLMAP_H

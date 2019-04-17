@@ -16,6 +16,7 @@
 #include <vector>
 
 class Color {
+    friend class Cell;
     friend class Glyph;
     friend class Display;
 
