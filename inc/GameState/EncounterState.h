@@ -9,6 +9,9 @@
 
 class EncounterState: public GameState{
 
+public:
+    EncounterState();
+    int Update(char c) override;
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENCOUNTERSTATE_H

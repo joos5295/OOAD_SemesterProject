@@ -3,3 +3,5 @@
 //
 
 #include "GameState/DungeonState.h"
+
+int DungeonState::Update(char c) {return(0);}

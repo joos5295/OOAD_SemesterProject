@@ -34,15 +34,20 @@ void Game::setActiveState(int s){
 
 //While the game isn't over, get a user input and do stuff
 void Game::run(){
-    Debug::println("running the game.");
-    setActiveState(0);
-    activeState->Update('a');
+    int next = 0;
     Input::init();
-    running = true;
-    while(running){
-        char c = Input::getInput();
+    Debug::println("running the game.");
+
+    setActiveState(next);
+    next = activeState->Update('a');
+
+    while(next >= 0){
+
+        setActiveState(next);       //update the game state to be the next state
+
+        char c = Input::getInput();     //get user input, to be updated to wait input
         if (c) {
-            activeState->Update(c);
+            next = activeState->Update(c);  //call update on the current game state
         }
     }
 }

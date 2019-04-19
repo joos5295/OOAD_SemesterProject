@@ -21,7 +21,7 @@ MenuState::MenuState() : start("Start",1, 1), exit("Exit", 1, 3){
     }
 }
 
-void MenuState::Update(char c){
+int MenuState::Update(char c){
 
     //stuff to handle input parsing
     switch(c){
@@ -57,4 +57,5 @@ void MenuState::Update(char c){
         b.drawSelf();
     }
     Display::commit();
+    return(0);
 }

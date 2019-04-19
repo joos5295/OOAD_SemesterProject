@@ -7,6 +7,6 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 
 FILE(GLOB_RECURSE ALL_FILES inc/*.h src/*.cpp)
 
-add_executable(dungeon ${ALL_FILES})
+add_executable(dungeon ${ALL_FILES} src/UI/Button.cpp inc/UI/Button.h)
 
 target_link_libraries(dungeon ncurses)

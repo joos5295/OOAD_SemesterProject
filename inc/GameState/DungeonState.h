@@ -11,6 +11,11 @@
 class DungeonState: public GameState{
 private:
     Level level;
+
+public:
+    DungeonState();
+    int Update(char c) override;
+
 };
 
 #endif //OOAD_SEMESTERPROJECT_DUNGEONSTATE_H

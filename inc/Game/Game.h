@@ -15,10 +15,8 @@ class Game {
 public:
     explicit Game();
     void run(); //start the game from main
-    void stop();    //stop the game from within game state, (temp solution)
 
 private:
-    bool running;   //keep track of whether the game is running temp solution
 
     GameState *activeState;
     DungeonState dungeon;
