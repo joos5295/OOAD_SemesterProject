@@ -13,7 +13,7 @@ class Button {
 private:
     GlyphMap *normal;
     GlyphMap *selected;
-    bool isSelected;
+
     int x;
     int y;
 
@@ -23,6 +23,8 @@ public:
     void select();
     void deSelect();
     void drawSelf();
+
+    bool isSelected;
 };
 
 

@@ -11,8 +11,9 @@
 
 //Initialize the game state to the menu state, maybe should do this in run instead
 Game::Game(){
+    //menu = MenuState();
     setActiveState(0);
-    menu = MenuState();
+
 }
 
 void Game::setActiveState(int s){

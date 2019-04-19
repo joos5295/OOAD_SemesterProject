@@ -39,6 +39,9 @@ Button::Button(std::string text, int xIn, int yIn) {
         n.emplace_back(c, Color::White, Color::Black);
         i.emplace_back(c, Color::Black, Color::White);
 
+        /*n.emplace_back(c, Color::White, Color::Black);
+        i.emplace_back(c, Color::Black, Color::White);*/
+
     }
 
     normal = new GlyphMap(n, 1, length);
@@ -47,13 +50,19 @@ Button::Button(std::string text, int xIn, int yIn) {
     isSelected = false;
 }
 
-void Button::select() {isSelected = true;}
-void Button::deSelect() {isSelected = false;}
+void Button::select() {
+    isSelected = true;
+}
+void Button::deSelect() {
+    isSelected = false;
+}
 
 void Button::drawSelf() {
     if(isSelected){
+        //Debug::println("Printing selected button.");
         Display::write(*selected, x, y);
     }else{
+        //Debug::println("Printing unselected button.");
         Display::write(*normal, x, y);
     }
 }
