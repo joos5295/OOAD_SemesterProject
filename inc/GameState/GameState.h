@@ -7,7 +7,7 @@
 
 class GameState{
 public:
-    void Update(char c);
+    virtual void Update(char c);
 };
 
 #endif //OOAD_SEMESTERPROJECT_GAMESTATE_H

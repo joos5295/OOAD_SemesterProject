@@ -20,7 +20,7 @@ private:
 
 public:
     MenuState();
-    void Update(char c);
+    void Update(char c) override;
 
 };
 
