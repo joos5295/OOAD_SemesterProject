@@ -7,24 +7,26 @@
 
 #include <string>
 #include <UI/GlyphMap.h>
+#include "UI/Text.h"
 
 class Button {
 
 private:
-    GlyphMap *normal;
-    GlyphMap *selected;
+    Text normal;
+    Text selected;
+
+    bool isSelected;
 
     int x;
     int y;
 
 public:
-    explicit Button(std::string text);
+    //explicit Button(std::string text);    //this should be deprecated
     explicit Button(std::string text, int xIn, int yIn);
     void select();
     void deSelect();
     void drawSelf();
 
-    bool isSelected;
 };
 
 

@@ -6,7 +6,19 @@
 #define OOAD_SEMESTERPROJECT_TEXT_H
 
 
+#include "GlyphMap.h"
+
 class Text {
+
+private:
+    GlyphMap *data;
+
+    int x;
+    int y;
+
+public:
+    explicit Text(std::string text, int xIn, int yIn, Color c);
+    void drawSelf();
 
 };
 

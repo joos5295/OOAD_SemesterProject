@@ -7,8 +7,8 @@
 #include "UI/Glyph.h"
 #include "Debug/Debug.h"
 
-Button::Button(std::string text) {
-
+/*Button::Button(std::string text) {
+    //this should be deprecated
     x = 0;
     y = 0;
 
@@ -24,29 +24,9 @@ Button::Button(std::string text) {
     selected = new GlyphMap(i, 1, length);
 
     isSelected = false;
-}
+}*/
 
-Button::Button(std::string text, int xIn, int yIn) {
-
-    x = xIn;
-    y = yIn;
-
-    std::vector<Glyph> n;   //normal version
-    std::vector<Glyph> i;   //selected version
-    int length = text.length();
-    for(int j = 0; j < length; j++){
-        char c = text[j];
-        n.emplace_back(c, Color::White, Color::Black);
-        i.emplace_back(c, Color::Black, Color::White);
-
-        /*n.emplace_back(c, Color::White, Color::Black);
-        i.emplace_back(c, Color::Black, Color::White);*/
-
-    }
-
-    normal = new GlyphMap(n, 1, length);
-    selected = new GlyphMap(i, 1, length);
-
+Button::Button(std::string text, int xIn, int yIn) : normal(text, xIn, yIn, Color(Color::White, Color::Black)), selected(text, xIn, yIn, Color(Color::Black, Color::White)){
     isSelected = false;
 }
 
@@ -59,10 +39,8 @@ void Button::deSelect() {
 
 void Button::drawSelf() {
     if(isSelected){
-        //Debug::println("Printing selected button.");
-        Display::write(*selected, x, y);
+        selected.drawSelf();
     }else{
-        //Debug::println("Printing unselected button.");
-        Display::write(*normal, x, y);
+        normal.drawSelf();
     }
 }

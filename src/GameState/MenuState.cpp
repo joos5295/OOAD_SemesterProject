@@ -7,25 +7,22 @@
 #include "UI/Button.h"
 #include "UI/Display.h"
 
-MenuState::MenuState() : start("Start",1, 1), exit("Exit", 1, 3){
-    //Debug::println("Initializing Menu State");
+MenuState::MenuState() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){
     start.select();
     buttons = {start, exit};
-    for (Button b: buttons){
-        //Debug::println("Printing state of a button");
-        if(b.isSelected){
-            //Debug::println("Button is selected");
-        }else{
-            //Debug::println("Button is not selected");
-        }
-    }
 }
 
 void MenuState::display(){
     Display::begin();
+
+    //display the instructions
+    instructions.drawSelf();
+
+    //display the buttons
     for (Button b: buttons){
         b.drawSelf();
     }
+
     Display::commit();
 }
 
