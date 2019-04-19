@@ -21,6 +21,14 @@ MenuState::MenuState() : start("Start",1, 1), exit("Exit", 1, 3){
     }
 }
 
+void MenuState::display(){
+    Display::begin();
+    for (Button b: buttons){
+        b.drawSelf();
+    }
+    Display::commit();
+}
+
 int MenuState::Update(char c){
 
     //stuff to handle input parsing
@@ -39,23 +47,12 @@ int MenuState::Update(char c){
                 buttons[buttonId].select();
             }
             break;
+        case ' ':
+            if(buttonId == 0){return(1);}
+            else if(buttonId == 1){return(-1);}
+            break;
+        default:
+            break;
     }
-
-    //Debug::println("changed button ID");
-
-    //drawing stuff, to be moved to a different function
-    //Debug::println("printing options");
-
-    Display::begin();
-    for (Button b: buttons){
-        /*Debug::println("Printing state of a button");
-        if(b.isSelected){
-            Debug::println("Button is selected");
-        }else{
-            Debug::println("Button is not selected");
-        }*/
-        b.drawSelf();
-    }
-    Display::commit();
     return(0);
 }

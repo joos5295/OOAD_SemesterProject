@@ -7,6 +7,7 @@
 
 class GameState{
 public:
+    virtual void display();
     virtual int Update(char c);
 };
 

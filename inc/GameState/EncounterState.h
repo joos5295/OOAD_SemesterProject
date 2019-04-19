@@ -11,6 +11,7 @@ class EncounterState: public GameState{
 
 public:
     EncounterState();
+    void display() override;
     int Update(char c) override;
 };
 

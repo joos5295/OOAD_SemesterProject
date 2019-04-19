@@ -14,6 +14,7 @@ private:
 
 public:
     DungeonState();
+    void display() override;
     int Update(char c) override;
 
 };

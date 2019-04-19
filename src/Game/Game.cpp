@@ -4,6 +4,7 @@
 //
 
 #include <Debug/Debug.h>
+#include <thread>
 #include "Game/Game.h"
 #include "GameState/GameState.h"
 #include "GameState/MenuState.h"
@@ -38,16 +39,16 @@ void Game::run(){
     Input::init();
     Debug::println("running the game.");
 
-    setActiveState(next);
-    next = activeState->Update('a');
-
     while(next >= 0){
 
         setActiveState(next);       //update the game state to be the next state
 
-        char c = Input::getInput();     //get user input, to be updated to wait input
+        activeState->display();     //have the active state draw itself
+
+        char c = Input::getInput();     //get user input, to be updated to wait input method
         if (c) {
             next = activeState->Update(c);  //call update on the current game state
         }
+        std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }
 }
