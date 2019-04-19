@@ -5,13 +5,22 @@
 #include "UI/Input.h"
 #include <ncurses.h>
 
-Input::Input() {
+void Input::init() {
     noecho();
     cbreak();
-    nodelay(stdscr, TRUE);
 }
 
-char Input::getInput() const {
+char Input::getInput() {
+    nodelay(stdscr, TRUE);
+    char c = getch();
+    if (c == ERR) {
+        return '\0';
+    }
+    return c;
+}
+
+char Input::waitInput() {
+    nodelay(stdscr, FALSE);
     char c = getch();
     if (c == ERR) {
         return '\0';

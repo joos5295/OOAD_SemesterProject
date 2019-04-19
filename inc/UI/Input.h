@@ -7,10 +7,13 @@
 
 class Input {
 public:
-    Input();
-    ~Input() = default;
+    Input() = delete;
+    ~Input() = delete;
 
-    char getInput() const;
+    static void init();
+
+    static char getInput();
+    static char waitInput();
 };
 
 #endif //OOAD_SEMESTERPROJECT_INPUT_H

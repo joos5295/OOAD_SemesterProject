@@ -12,7 +12,7 @@
 int main() {
     Display::init();
     Debug::init();
-    Input in;
+    Input::init();
     Glyph g1('g', Color::Red, Color::Green);
     Glyph g2('h', Color::White);
     Glyph g3('i', Color::Blue);
@@ -36,7 +36,7 @@ int main() {
         Display::write(level1);
         Display::commit();
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
-        char c = in.getInput();
+        char c = Input::getInput();
         if (c) {
             break;
         }
