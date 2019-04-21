@@ -7,8 +7,10 @@
 
 class GameState{
 public:
+    virtual ~GameState() = default;
+
     virtual void display() = 0;
-    virtual int update(char c) = 0;
+    virtual GameState* update(char c) = 0;
 };
 
 #endif //OOAD_SEMESTERPROJECT_GAMESTATE_H

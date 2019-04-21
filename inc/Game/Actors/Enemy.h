@@ -7,11 +7,13 @@
 
 #include "Entity.h"
 
-class Enemy : public Entity{
+class Enemy : public Entity {
 private:
     int attackDamage;
 
 public:
+    Enemy() = delete;
+
     int attack();
 };
 

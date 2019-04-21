@@ -24,8 +24,10 @@ private:
 
 public:
     Menu();
+    ~Menu() override = default;
+
     void display() override;
-    int update(char c) override;
+    GameState* update(char c) override;
 
 };
 

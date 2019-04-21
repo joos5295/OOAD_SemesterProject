@@ -4,12 +4,18 @@
 
 #include <UI/Display.h>
 #include "GameState/Dungeon.h"
+#include "Assets/AssetManager.h"
 
-Dungeon::Dungeon(){}
+Dungeon::Dungeon() : level(1) {}
 
 void Dungeon::display(){
-    Display::begin();
-    Display::commit();
+    level.display();
 }
 
-int Dungeon::update(char c) {return(0);}
+GameState* Dungeon::update(char c) {
+    /* when you trigger an encounter, use
+     * return GameStateManager::encounter(player, enemy, this);
+     */
+
+    return this;
+}

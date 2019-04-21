@@ -44,7 +44,7 @@
  *  'g' = Grass
  *  'w' = Wall
  *
- *  See assets/Level_1.txt for an example.
+ *  See assets/level-1.txt for an example.
  */
 
 #ifndef OOAD_SEMESTERPROJECT_ASSETMANAGER_H
@@ -63,8 +63,8 @@ class AssetManager {
     static void readTerrain(std::string);
 
 public:
-    static const GlyphMap loadArt(std::string);
-    static const TerrainMap loadTerrain(std::string);
+    static const GlyphMap* loadArt(std::string);
+    static const TerrainMap* loadTerrain(std::string);
 
 };
 

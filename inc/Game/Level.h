@@ -10,15 +10,17 @@
 #include "Game/Actors/Enemy.h"
 #include <vector>
 #include <iostream>
+#include "Game/Terrain/TerrainMap.h"
 
 class Level{
-private:
-    //TerrainMap terrainMap;
-    Player player;
+    const TerrainMap* terrainMap;
     std::vector<Enemy> EnemyList;
     //std::vector<Item> ItemList;
 
+public:
+    explicit Level(int);
 
+    void display() const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_LEVEL_H

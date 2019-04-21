@@ -4,8 +4,12 @@
 
 #include "GameState/Encounter.h"
 
-Encounter::Encounter(){}
+Encounter::Encounter(Player* p, Enemy* e, Dungeon* d) : player(p), enemy(e), dungeon(d) {}
 
-void Encounter::display(){}
+void Encounter::display() {
+    enemy->display(true,1,1);
+}
 
-int Encounter::update(char c) {return(0);}
+GameState* Encounter::update(char c) {
+    return this;
+}

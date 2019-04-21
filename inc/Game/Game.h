@@ -18,12 +18,8 @@ public:
 
 private:
 
-    GameState *activeState;
-    Dungeon dungeon;
-    Menu menu;
-    Encounter encounter;
+    GameState* activeState;
 
-    void setActiveState(int s);
 
 };
 

@@ -5,9 +5,9 @@
 #ifndef OOAD_SEMESTERPROJECT_PLAYER_H
 #define OOAD_SEMESTERPROJECT_PLAYER_H
 
-#include"Entity.h"
+#include "Entity.h"
 
-class Player : public Entity{
+class Player : public Entity {
 
 private:
     int posX;
@@ -15,6 +15,8 @@ private:
     //Level level;
 
 public:
+    explicit Player();
+
     int getX();
     int getY();
     void move();

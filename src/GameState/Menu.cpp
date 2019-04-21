@@ -6,6 +6,7 @@
 #include "GameState/Menu.h"
 #include "UI/Elements/Button.h"
 #include "UI/Display.h"
+#include "GameState/GameStateFactory.h"
 
 Menu::Menu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){
     start.select();
@@ -13,8 +14,6 @@ Menu::Menu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/selec
 }
 
 void Menu::display(){
-    Display::begin();
-
     //display the instructions
     instructions.drawSelf();
 
@@ -22,11 +21,9 @@ void Menu::display(){
     for (Button b: buttons){
         b.drawSelf();
     }
-
-    Display::commit();
 }
 
-int Menu::update(char c){
+GameState* Menu::update(char c){
 
     //stuff to handle input parsing
     switch(c){
@@ -45,11 +42,13 @@ int Menu::update(char c){
             }
             break;
         case ' ':
-            if(buttonId == 0){return(1);}
-            else if(buttonId == 1){return(-1);}
-            break;
+            if(buttonId == 0) {
+                return GameStateFactory::dungeon(this);
+            } else if(buttonId == 1) {
+                return GameStateFactory::exit(this);
+            }
         default:
             break;
     }
-    return(0);
+    return this;
 }

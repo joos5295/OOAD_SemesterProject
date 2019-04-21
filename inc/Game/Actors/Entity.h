@@ -5,12 +5,21 @@
 #ifndef OOAD_SEMESTERPROJECT_ENTITY_H
 #define OOAD_SEMESTERPROJECT_ENTITY_H
 
-class Entity{
-private:
+#include "UI/Elements/GlyphMap.h"
+
+class Entity {
+protected:
     int health;
+
+    const GlyphMap* encounterArt;
+
+    Entity(int,const GlyphMap*);
 
 public:
     void takeDamage(int dmg);
+    bool isDead() const;
+
+    virtual void display(bool, int, int) const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENTITY_H

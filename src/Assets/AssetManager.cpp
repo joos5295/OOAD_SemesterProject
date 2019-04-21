@@ -100,11 +100,11 @@ void AssetManager::readArt(std::string s) {
     glyphMaps.insert(std::make_pair(s,m));
 }
 
-const GlyphMap AssetManager::loadArt(std::string s) {
+const GlyphMap* AssetManager::loadArt(std::string s) {
     if (!glyphMaps.count(s)) {
         readArt(s);
     }
-    return glyphMaps.at(s);
+    return &glyphMaps.at(s);
 }
 
 void AssetManager::readTerrain(std::string s) {
@@ -170,9 +170,9 @@ void AssetManager::readTerrain(std::string s) {
     terrainMaps.insert(std::make_pair(s,m));
 }
 
-const TerrainMap AssetManager::loadTerrain(std::string s) {
+const TerrainMap* AssetManager::loadTerrain(std::string s) {
     if (!terrainMaps.count(s)) {
         readTerrain(s);
     }
-    return terrainMaps.at(s);
+    return &terrainMaps.at(s);
 }

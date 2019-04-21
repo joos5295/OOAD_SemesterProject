@@ -11,11 +11,14 @@
 class Dungeon: public GameState{
 private:
     Level level;
+    Player player;
 
 public:
     Dungeon();
+    ~Dungeon() override = default;
+
     void display() override;
-    int update(char c) override;
+    GameState* update(char c) override;
 
 };
 
