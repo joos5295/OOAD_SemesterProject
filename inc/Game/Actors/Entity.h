@@ -19,7 +19,7 @@ public:
     void takeDamage(int dmg);
     bool isDead() const;
 
-    virtual void display(bool, int, int) const;
+    void display(bool, int, int) const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENTITY_H

@@ -3,4 +3,10 @@
 //
 
 #include "Game/Actors/Enemy.h"
-int Enemy::attack() {return attackDamage;}
+#include "Assets/AssetManager.h"
+
+Enemy::Enemy(int h,std::string n) : Entity(h, AssetManager::loadArt(n)) {}
+
+int Enemy::attack() {
+    return attackDamage;
+}

@@ -7,7 +7,6 @@
 
 #include <UI/Elements/Text.h>
 #include "GameState.h"
-//#include "Game/Game.h"
 #include "UI/Elements/Button.h"
 
 class Menu: public GameState{

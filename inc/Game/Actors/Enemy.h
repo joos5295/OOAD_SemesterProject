@@ -12,7 +12,7 @@ private:
     int attackDamage;
 
 public:
-    Enemy() = delete;
+    Enemy(int,std::string);
 
     int attack();
 };

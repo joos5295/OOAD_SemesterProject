@@ -3,6 +3,7 @@
 //
 
 #include "GameState/Encounter.h"
+#include "Debug/Debug.h"
 
 Encounter::Encounter(Player* p, Enemy* e, Dungeon* d) : player(p), enemy(e), dungeon(d) {}
 

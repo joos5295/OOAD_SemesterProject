@@ -4,6 +4,7 @@
 
 #include "Game/Actors/Entity.h"
 #include "UI/Display.h"
+#include "Debug/Debug.h"
 
 Entity::Entity(int h, const GlyphMap* m) : health(h), encounterArt(m) {}
 
@@ -17,6 +18,8 @@ bool Entity::isDead() const {
 
 void Entity::display(bool encounter, int x, int y) const {
     if (encounter) {
-        Display::write((CellMap&) encounterArt, x ,y);
+//        if (encounterArt == nullptr)
+        Debug::println("oh no");
+        Display::write(*encounterArt, x ,y);
     }
 }

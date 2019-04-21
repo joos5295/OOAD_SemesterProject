@@ -12,7 +12,7 @@
 #include <iostream>
 #include "Game/Terrain/TerrainMap.h"
 
-class Level{
+class Level {
     const TerrainMap* terrainMap;
     std::vector<Enemy> EnemyList;
     //std::vector<Item> ItemList;
