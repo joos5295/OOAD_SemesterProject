@@ -7,12 +7,12 @@
 #include <thread>
 #include "Game/Game.h"
 #include "GameState/GameState.h"
-#include "GameState/MenuState.h"
+#include "GameState/Menu.h"
 #include "UI/Input.h"
 
 //Initialize the game state to the menu state, maybe should do this in run instead
 Game::Game(){
-    //menu = MenuState();
+    //menu = Menu();
     setActiveState(0);
 
 }
@@ -46,7 +46,7 @@ void Game::run(){
 
         char c = Input::getInput();     //get user input, to be updated to wait input method
         if (c) {
-            next = activeState->Update(c);  //call update on the current game state
+            next = activeState->update(c);  //call update on the current game state
         }
         std::this_thread::sleep_for(std::chrono::milliseconds(50));
     }

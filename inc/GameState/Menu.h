@@ -2,15 +2,15 @@
 // Created by user on 4/16/19.
 //
 
-#ifndef OOAD_SEMESTERPROJECT_MENUSTATE_H
-#define OOAD_SEMESTERPROJECT_MENUSTATE_H
+#ifndef OOAD_SEMESTERPROJECT_MENU_H
+#define OOAD_SEMESTERPROJECT_MENU_H
 
 #include <UI/Elements/Text.h>
 #include "GameState.h"
 //#include "Game/Game.h"
 #include "UI/Elements/Button.h"
 
-class MenuState: public GameState{
+class Menu: public GameState{
 
 private:
     Button start;
@@ -23,10 +23,10 @@ private:
     int buttonCount = 2;
 
 public:
-    MenuState();
+    Menu();
     void display() override;
-    int Update(char c) override;
+    int update(char c) override;
 
 };
 
-#endif //OOAD_SEMESTERPROJECT_MENUSTATE_H
+#endif //OOAD_SEMESTERPROJECT_MENU_H

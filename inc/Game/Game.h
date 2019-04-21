@@ -6,9 +6,9 @@
 #define OOAD_SEMESTERPROJECT_GAME_H
 
 #include "GameState/GameState.h"
-#include "GameState/DungeonState.h"
-#include "GameState/MenuState.h"
-#include "GameState/EncounterState.h"
+#include "GameState/Dungeon.h"
+#include "GameState/Menu.h"
+#include "GameState/Encounter.h"
 
 class Game {
 
@@ -19,9 +19,9 @@ public:
 private:
 
     GameState *activeState;
-    DungeonState dungeon;
-    MenuState menu;
-    EncounterState encounter;
+    Dungeon dungeon;
+    Menu menu;
+    Encounter encounter;
 
     void setActiveState(int s);
 
