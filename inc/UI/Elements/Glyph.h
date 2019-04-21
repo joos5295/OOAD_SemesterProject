@@ -5,8 +5,8 @@
 #ifndef OOAD_SEMESTERPROJECT_GLYPH_H
 #define OOAD_SEMESTERPROJECT_GLYPH_H
 
-#include "Color.h"
-#include "Cell.h"
+#include "UI/Color.h"
+#include "UI/Elements/Cell.h"
 
 class Glyph : public Cell {
     char c;

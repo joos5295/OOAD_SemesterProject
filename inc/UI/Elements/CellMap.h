@@ -5,7 +5,7 @@
 #ifndef OOAD_SEMESTERPROJECT_CELLMAP_H
 #define OOAD_SEMESTERPROJECT_CELLMAP_H
 
-#include "Color.h"
+#include "UI/Color.h"
 
 class CellMap {
 protected:

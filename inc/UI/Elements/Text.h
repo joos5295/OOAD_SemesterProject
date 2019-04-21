@@ -6,7 +6,7 @@
 #define OOAD_SEMESTERPROJECT_TEXT_H
 
 
-#include "GlyphMap.h"
+#include "UI/Elements/GlyphMap.h"
 
 class Text {
 

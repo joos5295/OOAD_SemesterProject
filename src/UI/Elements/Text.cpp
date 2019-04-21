@@ -3,7 +3,7 @@
 //
 
 #include <UI/Display.h>
-#include "UI/Text.h"
+#include "UI/Elements/Text.h"
 
 Text::Text(std::string text, int xIn, int yIn, Color col){
 

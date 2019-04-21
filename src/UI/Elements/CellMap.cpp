@@ -2,7 +2,7 @@
 // Created by Joel Courtney on 2019-04-16.
 //
 
-#include "UI/CellMap.h"
+#include "UI/Elements/CellMap.h"
 
 CellMap::CellMap(int r, int c) : R(r), C(c) {}
 

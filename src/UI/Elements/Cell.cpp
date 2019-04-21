@@ -2,7 +2,7 @@
 // Created by Joel Courtney on 2019-04-16.
 //
 
-#include "UI/Cell.h"
+#include "UI/Elements/Cell.h"
 
 Color Cell::print(Color prev) const {
     Color color = getColor();

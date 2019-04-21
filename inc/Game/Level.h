@@ -5,9 +5,9 @@
 #ifndef OOAD_SEMESTERPROJECT_LEVEL_H
 #define OOAD_SEMESTERPROJECT_LEVEL_H
 
-#include "Entity.h"
-#include "Player.h"
-#include "Enemy.h"
+#include "Game/Actors/Entity.h"
+#include "Game/Actors/Player.h"
+#include "Game/Actors/Enemy.h"
 #include <vector>
 #include <iostream>
 

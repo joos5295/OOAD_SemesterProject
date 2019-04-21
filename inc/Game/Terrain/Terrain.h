@@ -5,8 +5,8 @@
 #ifndef OOAD_SEMESTERPROJECT_TERRAIN_H
 #define OOAD_SEMESTERPROJECT_TERRAIN_H
 
-#include "UI/Cell.h"
-#include "Game/Player.h"
+#include "UI/Elements/Cell.h"
+#include "Game/Actors/Player.h"
 
 class Terrain : public Cell {
 public:

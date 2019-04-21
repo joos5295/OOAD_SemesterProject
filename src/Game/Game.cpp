@@ -36,7 +36,6 @@ void Game::setActiveState(int s){
 //While the game isn't over, get a user input and do stuff
 void Game::run(){
     int next = 0;
-    Input::init();
     Debug::println("running the game.");
 
     while(next >= 0){

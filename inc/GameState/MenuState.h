@@ -5,10 +5,10 @@
 #ifndef OOAD_SEMESTERPROJECT_MENUSTATE_H
 #define OOAD_SEMESTERPROJECT_MENUSTATE_H
 
-#include <UI/Text.h>
+#include <UI/Elements/Text.h>
 #include "GameState.h"
 //#include "Game/Game.h"
-#include "UI/Button.h"
+#include "UI/Elements/Button.h"
 
 class MenuState: public GameState{
 

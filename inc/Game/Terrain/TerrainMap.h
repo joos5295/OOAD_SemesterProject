@@ -6,7 +6,7 @@
 #define OOAD_SEMESTERPROJECT_TERRAINMAP_H
 
 #include "Terrain.h"
-#include "UI/CellMap.h"
+#include "UI/Elements/CellMap.h"
 
 class TerrainMap : public CellMap {
     const std::vector<Terrain*> cells;

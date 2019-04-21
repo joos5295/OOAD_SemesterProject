@@ -4,7 +4,7 @@
 
 #include <Debug/Debug.h>
 #include "GameState/MenuState.h"
-#include "UI/Button.h"
+#include "UI/Elements/Button.h"
 #include "UI/Display.h"
 
 MenuState::MenuState() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){

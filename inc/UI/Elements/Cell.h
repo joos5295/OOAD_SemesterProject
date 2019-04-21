@@ -5,7 +5,7 @@
 #ifndef OOAD_SEMESTERPROJECT_CELL_H
 #define OOAD_SEMESTERPROJECT_CELL_H
 
-#include "Color.h"
+#include "UI/Color.h"
 
 class Cell {
     virtual char getChar() const = 0;

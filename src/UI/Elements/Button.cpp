@@ -3,8 +3,8 @@
 //
 
 #include <UI/Display.h>
-#include "UI/Button.h"
-#include "UI/Glyph.h"
+#include "UI/Elements/Button.h"
+#include "UI/Elements/Glyph.h"
 #include "Debug/Debug.h"
 
 /*Button::Button(std::string text) {

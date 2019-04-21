@@ -6,8 +6,8 @@
 #define OOAD_SEMESTERPROJECT_BUTTON_H
 
 #include <string>
-#include <UI/GlyphMap.h>
-#include "UI/Text.h"
+#include <UI/Elements/GlyphMap.h>
+#include "Text.h"
 
 class Button {
 

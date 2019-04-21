@@ -4,7 +4,7 @@
 
 #include <fstream>
 #include <Game/Terrain/Empty.h>
-#include "Imports/AssetManager.h"
+#include "Assets/AssetManager.h"
 #include "Debug/Debug.h"
 #include "Game/Terrain/Wall.h"
 #include "Game/Terrain/Grass.h"
