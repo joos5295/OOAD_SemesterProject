@@ -13,3 +13,6 @@ Saved
 *.xcodeproj
 *.xcworkspace
 *.idea
+/debug.txt
+/CMakeLists.txt
+/cmake-build-debug
