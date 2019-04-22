@@ -9,7 +9,7 @@
 
 class EnemyFactory {
 public:
-    static Enemy ogre();
+    static Enemy* ogre(int,int);
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENEMYFACTORY_H

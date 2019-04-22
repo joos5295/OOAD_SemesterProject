@@ -15,6 +15,8 @@ public:
     TerrainMap(std::vector<Terrain*>,int,int);
 
     Color printNextCell(Color) const override;
+    
+    Terrain* getTerrain(int,int) const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_TERRAINMAP_H

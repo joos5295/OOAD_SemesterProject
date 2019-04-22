@@ -12,9 +12,12 @@ private:
     int attackDamage;
 
 public:
-    Enemy(int,std::string);
+    Enemy(int,int,int,const Glyph,const GlyphMap*);
 
     int attack();
+    
+    bool isFriendly() const override;
+    Enemy* generateEncounter();
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENEMY_H

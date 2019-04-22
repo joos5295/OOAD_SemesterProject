@@ -3,9 +3,24 @@
 //
 
 #include "Game/Actors/Player.h"
+#include "Debug/Debug.h"
 #include "Assets/AssetManager.h"
 
-Player::Player() : Entity(10, AssetManager::loadArt("player.txt")) {}
+Player::Player() : Entity(10, 0, 0, Glyph('I', Color::Green), AssetManager::loadArt("player.txt")) {}
 
 int Player::getX() {return posX;}
 int Player::getY() {return posY;}
+
+void Player::move(int dx, int dy) {
+    posX += dx;
+    posY += dy;
+}
+
+void Player::moveTo(int x,int y) {
+    posX = x;
+    posY = y;
+}
+
+void Player::heal(int h) {
+    health += h;
+}

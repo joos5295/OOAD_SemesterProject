@@ -8,7 +8,7 @@
 #include "GameState.h"
 #include "Game/Level.h"
 
-class Dungeon: public GameState{
+class Dungeon : public GameState {
 private:
     Level level;
     Player player;

@@ -19,6 +19,7 @@ Color Empty::getColor() const {
 }
 
 bool Empty::canEnter() const {
+    Debug::println("hi from noone");
     return true;
 }
 

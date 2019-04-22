@@ -8,18 +8,15 @@
 #include "Entity.h"
 
 class Player : public Entity {
-
-private:
-    int posX;
-    int posY;
-    //Level level;
-
 public:
     explicit Player();
 
     int getX();
     int getY();
-    void move();
+    void move(int,int);
+    void moveTo(int,int);
+    
+    void heal(int);
 };
 
 #endif //OOAD_SEMESTERPROJECT_PLAYER_H

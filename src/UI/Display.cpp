@@ -33,7 +33,7 @@ void Display::write(const Cell& g) {
 }
 
 void Display::write(const Cell& g, int x, int y) {
-    move(x, y);
+    move(y, x);
     color = g.print(color);
 }
 

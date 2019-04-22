@@ -18,6 +18,10 @@ GameState* GameStateFactory::dungeon(Menu* old) {
     return new Dungeon();
 }
 
+GameState* GameStateFactory::dungeon(Dungeon* d, Encounter* old) {
+    delete old;
+    return d;
+}
 GameState* GameStateFactory::encounter(Player* p, Enemy* e, Dungeon* d) {
     return new Encounter(p,e,d);
 }

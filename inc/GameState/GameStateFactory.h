@@ -14,6 +14,7 @@ public:
     static GameState* mainMenu();
     static GameState* mainMenu(GameState*);
     static GameState* dungeon(Menu*);
+    static GameState* dungeon(Dungeon*,Encounter*);
     static GameState* encounter(Player*, Enemy*, Dungeon*);
     static GameState* exit(GameState*);
 };

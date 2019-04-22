@@ -13,29 +13,29 @@ Menu::Menu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/selec
     buttons = {start, exit};
 }
 
-void Menu::display(){
+void Menu::display() {
     //display the instructions
     instructions.drawSelf();
 
     //display the buttons
-    for (Button b: buttons){
+    for (Button b: buttons) {
         b.drawSelf();
     }
 }
 
-GameState* Menu::update(char c){
+GameState* Menu::update(char c) {
 
     //stuff to handle input parsing
-    switch(c){
+    switch(c) {
         case 'w':
-            if( buttonId > 0){
+            if( buttonId > 0) {
                 buttons[buttonId].deSelect();
                 buttonId--;
                 buttons[buttonId].select();
             }
             break;
         case 's':
-            if( buttonId < buttonCount-1){
+            if( buttonId < buttonCount-1) {
                 buttons[buttonId].deSelect();
                 buttonId++;
                 buttons[buttonId].select();

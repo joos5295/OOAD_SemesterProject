@@ -16,3 +16,8 @@ Color TerrainMap::printNextCell(Color prev) const {
         exit(-1);
     }
 }
+
+Terrain* TerrainMap::getTerrain(int x, int y) const {
+    Debug::println(std::to_string(x+C*y));
+    return cells.at(x + C*y);
+}

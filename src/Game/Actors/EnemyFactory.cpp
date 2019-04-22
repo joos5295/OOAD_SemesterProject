@@ -3,7 +3,8 @@
 //
 
 #include "Game/Actors/EnemyFactory.h"
+#include "Assets/AssetManager.h"
 
-Enemy EnemyFactory::ogre() {
-    return Enemy(5, "ogre.txt");
+Enemy* EnemyFactory::ogre(int x, int y) {
+    return new Enemy(5, x, y, Glyph('&', Color::Red), AssetManager::loadArt("ogre.txt"));
 }
