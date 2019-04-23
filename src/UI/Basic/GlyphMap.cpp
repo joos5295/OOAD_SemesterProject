@@ -2,7 +2,7 @@
 // Created by joel on 4/10/19.
 //
 
-#include "UI/Elements/GlyphMap.h"
+#include "UI/Basic/GlyphMap.h"
 #include "Debug/Debug.h"
 
 GlyphMap::GlyphMap(std::vector<Glyph> cs, int r, int c) : CellMap(r,c), cells(std::move(cs)) {}

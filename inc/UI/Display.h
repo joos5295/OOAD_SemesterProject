@@ -20,10 +20,10 @@
 #ifndef OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 #define OOAD_DisplayEMEDisplayTERPROJECT_DIDisplayPLAY_H
 
-#include "UI/Elements/Cell.h"
+#include "UI/Basic/Cell.h"
 #include <iostream>
 #include <ncurses.h>
-#include "UI/Elements/CellMap.h"
+#include "UI/Basic/CellMap.h"
 
 class Display {
     static Color color;

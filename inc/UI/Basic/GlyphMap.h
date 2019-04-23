@@ -5,9 +5,9 @@
 #ifndef OOAD_SEMESTERPROJECT_GLYPHMAP_H
 #define OOAD_SEMESTERPROJECT_GLYPHMAP_H
 
-#include "UI/Elements/Glyph.h"
+#include "Glyph.h"
 #include <vector>
-#include "UI/Elements/CellMap.h"
+#include "CellMap.h"
 
 class GlyphMap : public CellMap {
     const std::vector<Glyph> cells;

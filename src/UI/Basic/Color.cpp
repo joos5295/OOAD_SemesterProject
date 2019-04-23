@@ -2,7 +2,7 @@
 // Created by Joel Courtney on 2019-04-09.
 //
 
-#include "UI/Color.h"
+#include "UI/Basic/Color.h"
 #include <iostream>
 #include <ncurses.h>
 #include "UI/Display.h"

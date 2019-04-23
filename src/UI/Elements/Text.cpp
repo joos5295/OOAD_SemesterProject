@@ -4,12 +4,9 @@
 
 #include <UI/Display.h>
 #include "UI/Elements/Text.h"
+#include "Debug/Debug.h"
 
-Text::Text(std::string text, int xIn, int yIn, Color col){
-
-    x = xIn;
-    y = yIn;
-
+Text::Text(std::string text, int xIn, int yIn, Color col) : UIElement(xIn,yIn) {
     std::vector<Glyph> g;   //normal version
     int length = text.length();
     for(int j = 0; j < length; j++){
@@ -20,6 +17,6 @@ Text::Text(std::string text, int xIn, int yIn, Color col){
     data = new GlyphMap(g, 1, length);
 }
 
-void Text::drawSelf() {
+void Text::display() const {
     Display::write(*data, x, y);
 }

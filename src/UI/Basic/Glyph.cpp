@@ -2,7 +2,7 @@
 // Created by Joel Courtney on 2019-04-09.
 //
 
-#include "UI/Elements/Glyph.h"
+#include "UI/Basic/Glyph.h"
 #include <iostream>
 #include <ncurses.h>
 

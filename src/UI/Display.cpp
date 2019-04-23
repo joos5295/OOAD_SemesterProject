@@ -3,6 +3,8 @@
 //
 
 #include "UI/Display.h"
+#include <chrono>
+#include <thread>
 
 Color Display::color;
 Color Display::boxColor;
@@ -27,6 +29,7 @@ void Display::begin() {
 
 void Display::commit() {
     refresh();
+    std::this_thread::sleep_for(std::chrono::milliseconds(50));
 }
 
 void Display::write(const Cell& g) {

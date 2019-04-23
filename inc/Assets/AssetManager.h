@@ -53,7 +53,7 @@
 #include <unordered_map>
 #include <string>
 #include <Game/Level.h>
-#include "UI/Elements/GlyphMap.h"
+#include "UI/Basic/GlyphMap.h"
 #include "Game/Terrain/TerrainMap.h"
 
 class AssetManager {

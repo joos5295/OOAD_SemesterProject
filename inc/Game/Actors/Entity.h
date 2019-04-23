@@ -11,7 +11,7 @@
 #ifndef OOAD_SEMESTERPROJECT_ENTITY_H
 #define OOAD_SEMESTERPROJECT_ENTITY_H
 
-#include "UI/Elements/GlyphMap.h"
+#include "UI/Basic/GlyphMap.h"
 #include "Actor.h"
 
 class Entity : public Actor {

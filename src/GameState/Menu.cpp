@@ -16,11 +16,11 @@ Menu::Menu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/selec
 
 void Menu::display() {
     //display the instructions
-    instructions.drawSelf();
+    instructions.display();
 
     //display the buttons
     for (Button b: buttons) {
-        b.drawSelf();
+        b.display();
     }
 }
 

@@ -6,10 +6,11 @@
 #define OOAD_SEMESTERPROJECT_BUTTON_H
 
 #include <string>
-#include <UI/Elements/GlyphMap.h>
+#include <UI/Basic/GlyphMap.h>
 #include "Text.h"
+#include "UIElement.h"
 
-class Button {
+class Button : public UIElement {
 
 private:
     Text normal;
@@ -17,15 +18,12 @@ private:
 
     bool isSelected;
 
-    int x;
-    int y;
-
 public:
     //explicit Button(std::string text);    //this should be deprecated
     explicit Button(std::string text, int xIn, int yIn);
     void select();
     void deSelect();
-    void drawSelf();
+    void display() const override;
 
 };
 

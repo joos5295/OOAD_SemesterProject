@@ -6,19 +6,17 @@
 #define OOAD_SEMESTERPROJECT_TEXT_H
 
 
-#include "UI/Elements/GlyphMap.h"
+#include "UI/Basic/GlyphMap.h"
+#include "UIElement.h"
 
-class Text {
+class Text : public UIElement {
 
 private:
     GlyphMap *data;
 
-    int x;
-    int y;
-
 public:
     explicit Text(std::string text, int xIn, int yIn, Color c);
-    void drawSelf();
+    void display() const override;
 
 };
 

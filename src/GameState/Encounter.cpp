@@ -8,16 +8,26 @@
 #include "UI/Input.h"
 #include "UI/Display.h"
 
-Encounter::Encounter(Player* p, Enemy* e, Dungeon* d) : player(p), enemy(e), dungeon(d) {}
+Encounter::Encounter(Player* p, Enemy* e, Dungeon* d) : player(p), enemy(e), dungeon(d) {
+    int playerWidth = player->getEncounterArtWidth();
+    int playerHeight = player->getEncounterArtHeight();
+    int enemyWidth = enemy->getEncounterArtWidth();
+    int enemyHeight = enemy->getEncounterArtHeight();
+    maxWidth = (playerWidth>enemyWidth)?playerWidth:enemyWidth;
+    maxHeight = (playerHeight>enemyHeight)?playerHeight:enemyHeight;
+    
+    attackSlider = enemy->getSlider();
+    attackSlider.setPos(0,maxHeight+1);
+}
 
 void Encounter::display() {
     int playerWidth = player->getEncounterArtWidth();
     int playerHeight = player->getEncounterArtHeight();
     int enemyWidth = enemy->getEncounterArtWidth();
     int enemyHeight = enemy->getEncounterArtHeight();
-    int maxWidth = (playerWidth>enemyWidth)?playerWidth:enemyWidth;
-    int maxHeight = (playerHeight>enemyHeight)?playerHeight:enemyHeight;
-    
+    if (attacking) {
+        attackSlider.display();
+    }
     Display::box(maxWidth+1, maxHeight + 1, 0, 0);
     Display::box(maxWidth+1, maxHeight+1, maxWidth+1, 0);
     player->display(1+(maxWidth-playerWidth)/2,1+(maxHeight-playerHeight)/2);
@@ -25,6 +35,12 @@ void Encounter::display() {
 }
 
 GameState* Encounter::update() {
-    char c = Input::waitInput();
-    return GameStateFactory::dungeon(dungeon, this);
+    if (attacking) {
+        attackSlider.update();
+    }
+    char c = Input::getInput();
+    if (c != '\0')
+        return GameStateFactory::dungeon(dungeon, this);
+    else
+        return this;
 }

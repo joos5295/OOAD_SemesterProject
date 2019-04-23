@@ -1,7 +1,7 @@
 #include <iostream>
 #include "UI/Display.h"
 
-#include "UI/Elements/Glyph.h"
+#include "UI/Basic/Glyph.h"
 #include <chrono>
 #include <thread>
 #include <ncurses.h>

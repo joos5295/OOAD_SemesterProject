@@ -11,16 +11,19 @@
 #ifndef OOAD_SEMESTERPROJECT_ENEMY_H
 #define OOAD_SEMESTERPROJECT_ENEMY_H
 
+#include <UI/Elements/Slider.h>
 #include "Entity.h"
 
 class Enemy : public Entity {
 private:
     int attackDamage;
-
+    Slider slider;
+    
 public:
-    Enemy(int,int,int,const Glyph,const GlyphMap*);
+    Enemy(int,const Slider&,int,int,const Glyph,const GlyphMap*);
 
-    int attack();
+    int attack() const;
+    Slider getSlider() const;
     
     bool isFriendly() const override;
     Enemy* generateEncounter();
