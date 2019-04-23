@@ -16,8 +16,13 @@ class Level {
     const TerrainMap* terrain;
     std::vector<Actor*> actors;
 
+private:
+    int pX;
+    int pY;
+
 public:
-    explicit Level(int);
+    //explicit Level(int);      //currently deprecated
+    explicit Level(TerrainMap*, int, int);
 
     void display() const;
     

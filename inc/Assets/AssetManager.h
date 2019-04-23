@@ -52,19 +52,23 @@
 
 #include <unordered_map>
 #include <string>
+#include <Game/Level.h>
 #include "UI/Elements/GlyphMap.h"
 #include "Game/Terrain/TerrainMap.h"
 
 class AssetManager {
     static std::unordered_map<std::string,GlyphMap> glyphMaps;
-    static std::unordered_map<std::string,TerrainMap> terrainMaps;
+    static std::unordered_map<std::string,Level> levels;        //might change key to int, or refactor into a vector.
 
     static void readArt(std::string);
     static void readTerrain(std::string);
 
 public:
     static const GlyphMap* loadArt(std::string);
-    static const TerrainMap* loadTerrain(std::string);
+
+    //removed const because levels need to be interactable
+    static Level* loadTerrain(int);       //for loading levels by number instead of file name.
+    static Level* loadTerrain(std::string);      //probably to be deprecated, kept for consistency, and maybe internal use later.
 
 };
 

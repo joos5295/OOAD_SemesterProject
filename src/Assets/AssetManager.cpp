@@ -11,7 +11,7 @@
 #include "Game/Terrain/Empty.h"
 
 std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
-std::unordered_map<std::string,TerrainMap> AssetManager::terrainMaps;
+std::unordered_map<std::string,Level> AssetManager::levels;
 
 void AssetManager::readArt(std::string s) {
     std::string path = "../assets/" + s;
@@ -115,7 +115,9 @@ void AssetManager::readTerrain(std::string s) {
     Terrain* grass = Grass::getInstance();
 
     std::string path = "../assets/" + s;
-    int W = -1;
+    int pX = 0;     //store the players start dimensions
+    int pY = 0;
+    int W = -1;     //accumulate the dimensions of the level
     int H = 0;
     std::ifstream file(path);
     if (!file.is_open()) {
@@ -146,6 +148,14 @@ void AssetManager::readTerrain(std::string s) {
                     cells.push_back(grass);
                     width++;
                     break;
+                case 'S':
+                    pX = width;
+                    pY = H;
+                    cells.push_back(empty);
+                    width++;
+                    break;
+                case 'E':
+                    break;
                 default:
                     Debug::println("unrecognized terrain char");
                     exit(1);
@@ -167,12 +177,17 @@ void AssetManager::readTerrain(std::string s) {
         }
     }
     TerrainMap m(cells, H, W);
-    terrainMaps.insert(std::make_pair(s,m));
+    Level l(&m, pX, pY);      //put the terrain map inside a level
+    levels.insert(std::make_pair(s,l));
 }
 
-const TerrainMap* AssetManager::loadTerrain(std::string s) {
-    if (!terrainMaps.count(s)) {
+Level* AssetManager::loadTerrain(int n) {
+    return(AssetManager::loadTerrain("level-" + std::to_string(n) + ".txt"));
+}
+
+Level* AssetManager::loadTerrain(std::string s) {
+    if (!levels.count(s)) {
         readTerrain(s);
     }
-    return &terrainMaps.at(s);
+    return &levels.at(s);
 }

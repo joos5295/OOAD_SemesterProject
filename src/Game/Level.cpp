@@ -8,9 +8,14 @@
 #include "UI/Display.h"
 #include "Game/Actors/EnemyFactory.h"
 
-Level::Level(int n) : terrain(AssetManager::loadTerrain("level-" + std::to_string(n) + ".txt")) {
+/*Level::Level(int n) : terrain(AssetManager::loadTerrain("level-" + std::to_string(n) + ".txt")) {
     Actor* enemy = EnemyFactory::ogre(2,2);
     actors.push_back(enemy);
+}*/
+
+Level::Level(TerrainMap* t, int playerX, int playerY): terrain(t){
+    pX = playerX;
+    pY = playerY;
 }
 
 void Level::display() const {
@@ -31,9 +36,9 @@ Actor* Level::interact(int x, int y) {
 }
 
 int Level::getStartX() const {
-    return 2;
+    return pX;
 }
 
 int Level::getStartY() const {
-    return 1;
+    return pY;
 }

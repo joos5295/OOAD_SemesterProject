@@ -12,7 +12,7 @@
 #include "UI/Input.h"
 
 Dungeon::Dungeon(){
-    level = new Level(1);
+    level = AssetManager::loadTerrain(1);
     player.moveTo(level->getStartX(),level->getStartY());
 }
 
