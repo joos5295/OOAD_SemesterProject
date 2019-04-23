@@ -5,9 +5,13 @@
 #include "Game/Terrain/TerrainMap.h"
 #include "Debug/Debug.h"
 
-TerrainMap::TerrainMap(std::vector<Terrain*> cs, int r, int c) : CellMap(r,c), cells(std::move(cs)) {}
+TerrainMap::TerrainMap(std::vector<Terrain*> cs, int r, int c) : CellMap(r,c), cells(std::move(cs)) {
+    Debug::println(std::to_string(cells.size()));
+}
 
 Color TerrainMap::printNextCell(Color prev) const {
+    Debug::println(std::to_string(cells.size()));
+    Debug::println("before Tmap printNextCell");
     if (next < R*C)
         return cells[next++]->print(prev);
     else {
