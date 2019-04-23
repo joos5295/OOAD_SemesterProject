@@ -6,5 +6,5 @@
 #include "Assets/AssetManager.h"
 
 Enemy* EnemyFactory::ogre(int x, int y) {
-    return new Enemy(5, x, y, Glyph('&', Color::Red), AssetManager::loadArt("ogre.txt"));
+    return new Enemy(5, x, y, Glyph('&', Color::Red), AssetManager::loadArt("phoenix.txt"));
 }
