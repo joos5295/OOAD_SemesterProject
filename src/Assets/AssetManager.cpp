@@ -9,6 +9,7 @@
 #include "Game/Terrain/Wall.h"
 #include "Game/Terrain/Grass.h"
 #include "Game/Terrain/Empty.h"
+#include "Game/Actors/EnemyFactory.h"
 
 std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
 std::unordered_map<std::string,Level> AssetManager::levels;
@@ -72,7 +73,6 @@ void AssetManager::readArt(std::string s) {
                         Debug::println(std::to_string(tag));
                         Debug::close();
                         exit(-1);
-                        break;
                 }
                 if (c == 'F')
                     fore = color;
@@ -128,6 +128,7 @@ void AssetManager::readTerrain(std::string s) {
         exit(-1);
     }
     std::vector<Terrain*> cells;
+    std::vector<Actor*> actors;
     std::string line;
     while (!file.eof()) {
         std::getline(file, line);
@@ -137,28 +138,27 @@ void AssetManager::readTerrain(std::string s) {
             switch (ch) {
                 case ' ':
                     cells.push_back(empty);
-                    width++;
                     break;
                 case 'w':
                     cells.push_back(wall);
-                    width++;
                     break;
                 case 'g':
                     cells.push_back(grass);
-                    width++;
                     break;
                 case 'S':
                     pX = width;
                     pY = H;
                     cells.push_back(empty);
-                    width++;
                     break;
-                case 'E':
+                case 'O':
+                    cells.push_back(empty);
+                    actors.push_back(EnemyFactory::ogre(width,H));
                     break;
                 default:
                     Debug::println("unrecognized terrain char");
                     exit(1);
             }
+            width++;
         }
         if (W == -1)
             W = width;
@@ -177,7 +177,7 @@ void AssetManager::readTerrain(std::string s) {
         H++;
     }
     TerrainMap m(cells, H, W);
-    Level l(m, pX, pY);      //put the terrain map inside a level
+    Level l(m, actors, pX, pY);      //put the terrain map inside a level
     levels.insert(std::make_pair(s,l));
 }
 

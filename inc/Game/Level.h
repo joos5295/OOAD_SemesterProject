@@ -22,7 +22,7 @@ private:
 
 public:
     //explicit Level(int);      //currently deprecated
-    explicit Level(TerrainMap, int, int);
+    explicit Level(TerrainMap, std::vector<Actor*>, int, int);
 
     void display() const;
     
