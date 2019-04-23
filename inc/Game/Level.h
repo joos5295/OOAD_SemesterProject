@@ -40,6 +40,7 @@ public:
     void display() const;
     
     bool canMove(int,int);
+    void enter(int, int, Player*);      //players now enter each terrain cell they step on
     Actor* interact(int,int);
     
     int getStartX() const;

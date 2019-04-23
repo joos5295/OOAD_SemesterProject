@@ -9,6 +9,7 @@
 #include "Game/Terrain/Wall.h"
 #include "Game/Terrain/Grass.h"
 #include "Game/Terrain/Empty.h"
+#include "Game/Terrain/Goal.h"
 #include "Game/Actors/EnemyFactory.h"
 
 std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
@@ -113,6 +114,7 @@ void AssetManager::readTerrain(std::string s) {
     Terrain* empty = Empty::getInstance();
     Terrain* wall = Wall::getInstance();
     Terrain* grass = Grass::getInstance();
+    Terrain* goal = Goal::getInstance();
 
     std::string path = "../assets/" + s;
     int pX = 0;     //store the players start dimensions
@@ -152,6 +154,9 @@ void AssetManager::readTerrain(std::string s) {
                     break;
                 case 'g':
                     cells.push_back(grass);
+                    break;
+                case 'e':
+                    cells.push_back(goal);
                     break;
                 case 'S':
                     pX = width;

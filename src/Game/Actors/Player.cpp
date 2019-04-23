@@ -24,3 +24,17 @@ void Player::moveTo(int x,int y) {
 void Player::heal(int h) {
     health += h;
 }
+
+void Player::enterGoal() {
+    //Debug::println("reached the goal");
+    atGoal = true;
+}
+
+void Player::enterLevel() {
+    //Debug::println("entering a new level");
+    atGoal = false;
+}
+
+bool Player::isAtGoal() {
+    return(atGoal);
+}

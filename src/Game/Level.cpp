@@ -30,6 +30,10 @@ bool Level::canMove(int x, int y) {
     return terrain.getTerrain(x,y)->canEnter();
 }
 
+void Level::enter(int x, int y, Player* p) {    //routs enter calls to the specified terrain cell.
+    terrain.getTerrain(x, y)->enter(p);
+}
+
 Actor* Level::interact(int x, int y) {
     for (Actor* a : actors) {
         if (a->getX() == x && a->getY() == y) {

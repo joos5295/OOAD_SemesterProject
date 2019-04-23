@@ -12,16 +12,13 @@
 #include "UI/Input.h"
 
 Dungeon::Dungeon(){
-    //level = AssetManager::loadTerrain(1);
-    //player.moveTo(level->getStartX(),level->getStartY());
     startNextLevel();
 }
 
 void Dungeon::startNextLevel() {    //automatically load the next level, and set up the game.
-    if(level != nullptr) {
-        delete(level);
-    }
+    Debug::println("loading level " + std::to_string(nextLevel));
     level = AssetManager::loadTerrain(nextLevel++);
+    player.enterLevel();
     player.moveTo(level->getStartX(),level->getStartY());
 }
 
@@ -35,9 +32,16 @@ GameState* Dungeon::update() {
      * return GameStateManager::encounter(player, enemy, this);
      */
 
-    if(level->getSize() == 0){      //check if the level is a valid level, (would be better to do an update based system, but would be dificult to verify the initial level.
+    if(level->getSize() == 0){      //check if the level is a valid level,
+        // (would be better to do an update based system, but would be difficult to verify the initial level.
         return(GameStateFactory::mainMenu(this));
     }
+
+    if(player.isAtGoal()){      //check if the player is at the goal of the level, if they are start the next level, and exit this cycle of update
+        startNextLevel();
+        return(this);
+    }
+
     char c = Input::waitInput();
 
     Actor* actor = nullptr;
@@ -45,24 +49,29 @@ GameState* Dungeon::update() {
         case 'w':
             if (level->canMove(player.getX(),player.getY()-1)) {
                 player.move(0,-1);
+                level->enter(player.getX(),player.getY(), &player);     //players actualy enter each cell now,
+                                                    // could probably be combined with some of the other calls
                 actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 'a':
             if (level->canMove(player.getX()-1,player.getY())) {
                 player.move(-1,0);
+                level->enter(player.getX(),player.getY(), &player);
                 actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 's':
             if (level->canMove(player.getX(),player.getY()+1)) {
                 player.move(0,1);
+                level->enter(player.getX(),player.getY(), &player);
                 actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 'd':
             if (level->canMove(player.getX()+1,player.getY())) {
                 player.move(1,0);
+                level->enter(player.getX(),player.getY(), &player);
                 actor = level->interact(player.getX(),player.getY());
             }
             break;
