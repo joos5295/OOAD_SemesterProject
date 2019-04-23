@@ -12,16 +12,12 @@
 #include "UI/Input.h"
 
 Dungeon::Dungeon(){
-    //Debug::println("before level init");
     level = AssetManager::loadTerrain(1);
     player.moveTo(level->getStartX(),level->getStartY());
-    //Debug::println("after level init");
 }
 
 void Dungeon::display(){
-    //Debug::println("before level display");
     level->display();
-    //Debug::println("after level display");
     player.display();
 }
 

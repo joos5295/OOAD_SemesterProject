@@ -13,21 +13,18 @@
     actors.push_back(enemy);
 }*/
 
-Level::Level(TerrainMap* t, int playerX, int playerY): terrain(std::move(t)){
+Level::Level(TerrainMap t, int playerX, int playerY): terrain(std::move(t)) {
     //terrain = t;
     pX = playerX;
     pY = playerY;
 }
 
 void Level::display() const {
-    Debug::println("before level display");
-    Debug::println(std::to_string(terrain->getCols()) + ", " + std::to_string(terrain->getRows()));
-    Display::write(*terrain);
-    Debug::println("after level display");
+    Display::write(terrain);
 }
 
 bool Level::canMove(int x, int y) {
-    return terrain->getTerrain(x,y)->canEnter();
+    return terrain.getTerrain(x,y)->canEnter();
 }
 
 Actor* Level::interact(int x, int y) {

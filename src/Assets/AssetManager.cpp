@@ -131,7 +131,6 @@ void AssetManager::readTerrain(std::string s) {
     std::string line;
     while (!file.eof()) {
         std::getline(file, line);
-        H++;
         int width = 0;
         for (auto i = line.begin(); i != line.end(); i++) {
             char ch = *i;
@@ -175,9 +174,10 @@ void AssetManager::readTerrain(std::string s) {
             Debug::close();
             exit(-1);
         }
+        H++;
     }
     TerrainMap m(cells, H, W);
-    Level l(&m, pX, pY);      //put the terrain map inside a level
+    Level l(m, pX, pY);      //put the terrain map inside a level
     levels.insert(std::make_pair(s,l));
 }
 

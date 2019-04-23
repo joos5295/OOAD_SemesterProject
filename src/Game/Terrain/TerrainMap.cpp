@@ -10,8 +10,6 @@ TerrainMap::TerrainMap(std::vector<Terrain*> cs, int r, int c) : CellMap(r,c), c
 }
 
 Color TerrainMap::printNextCell(Color prev) const {
-    Debug::println(std::to_string(cells.size()));
-    Debug::println("before Tmap printNextCell");
     if (next < R*C)
         return cells[next++]->print(prev);
     else {
@@ -22,6 +20,5 @@ Color TerrainMap::printNextCell(Color prev) const {
 }
 
 Terrain* TerrainMap::getTerrain(int x, int y) const {
-    Debug::println(std::to_string(x+C*y));
     return cells.at(x + C*y);
 }

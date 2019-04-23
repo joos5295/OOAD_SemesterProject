@@ -13,7 +13,7 @@
 #include "Game/Terrain/TerrainMap.h"
 
 class Level {
-    const TerrainMap* terrain;
+    const TerrainMap terrain;
     std::vector<Actor*> actors;
 
 private:
@@ -22,7 +22,7 @@ private:
 
 public:
     //explicit Level(int);      //currently deprecated
-    explicit Level(TerrainMap*, int, int);
+    explicit Level(TerrainMap, int, int);
 
     void display() const;
     
