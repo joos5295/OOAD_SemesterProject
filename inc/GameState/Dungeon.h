@@ -10,7 +10,7 @@
 
 class Dungeon : public GameState {
 private:
-    Level level;
+    Level* level;
     Player player;
 
 public:
