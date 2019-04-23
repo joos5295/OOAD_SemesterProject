@@ -23,6 +23,5 @@ bool Goal::canEnter() const {
 }
 
 void Goal::enter(Player* p) {
-    Debug::println("telling the player that it is in the goal");
     p->enterGoal();
 }
