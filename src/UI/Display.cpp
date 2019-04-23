@@ -5,6 +5,7 @@
 #include "UI/Display.h"
 
 Color Display::color;
+Color Display::boxColor;
 
 void Display::init() {
     initscr();
@@ -21,6 +22,7 @@ void Display::begin() {
     clear();
     color = Color(Color::Empty, Color::Empty);
     color.activate();
+    boxColor = Color(Color::White, Color::Black);
 }
 
 void Display::commit() {
@@ -59,4 +61,19 @@ void Display::write(const CellMap& m, int x, int y) {
             color = m.printNextCell(color);
         }
     }
+}
+
+void Display::box(int w, int h, int x, int y) {
+    if (color != boxColor) {
+        color = boxColor;
+        color.activate();
+    }
+    mvhline(y, x, '-', w);
+    mvhline(y+h,x,'-',w);
+    mvvline(y,x,'|',h);
+    mvvline(y,x+w,'|',h);
+    mvaddch(y,x,'+');
+    mvaddch(y+h,x,'+');
+    mvaddch(y,x+w,'+');
+    mvaddch(y+h,x+w,'+');
 }

@@ -2,6 +2,15 @@
 // Created by Joel Courtney on 2019-04-17.
 //
 
+/*
+ * Terrain cell with nothing special about it.
+ * Appears as a black blank cell in the display.
+ * Nothing happens unless there happens to be an
+ * enemy inside it, which is out of the Empty class's
+ * control. (Although enemies should typically be spawned
+ * inside Grass.)
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_EMPTY_H
 #define OOAD_SEMESTERPROJECT_EMPTY_H
 

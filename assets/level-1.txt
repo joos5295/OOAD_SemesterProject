@@ -6,7 +6,7 @@ wg w         w gw
 wg w         w gw
 wg w         w gw
 wg w         w gw
-wg      O      gw
+wg      P      gw
 wg w         w gw
 wg w         w gw
 wg w         w gw

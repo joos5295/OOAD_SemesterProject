@@ -6,7 +6,7 @@
 #include "Debug/Debug.h"
 #include "Assets/AssetManager.h"
 
-Player::Player() : Entity(10, 0, 0, Glyph('I', Color::Green), AssetManager::loadArt("player.txt")) {}
+Player::Player() : Entity(10, 0, 0, Glyph('I', Color::Green), AssetManager::loadArt("knight.txt")) {}
 
 int Player::getX() {return posX;}
 int Player::getY() {return posY;}

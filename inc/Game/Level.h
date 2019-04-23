@@ -2,6 +2,17 @@
 // Created by user on 4/16/19.
 //
 
+/*
+ * Responsible for coordinating the terrain,
+ * the non-player actors, and the start and end
+ * points of the dungeon.
+ * 
+ * The dungeon must ask if the player can move to
+ * a given cell. If they can, it then calls interact,
+ * which returns a pointer to the actor at that position,
+ * if one exists.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_LEVEL_H
 #define OOAD_SEMESTERPROJECT_LEVEL_H
 

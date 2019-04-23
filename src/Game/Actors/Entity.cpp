@@ -23,3 +23,11 @@ void Entity::display(int x, int y) const {
 void Entity::display() const {
     Display::write(dungeonArt,posX,posY);
 }
+
+int Entity::getEncounterArtWidth() const {
+    return encounterArt->getCols();
+}
+
+int Entity::getEncounterArtHeight() const {
+    return encounterArt->getRows();
+}

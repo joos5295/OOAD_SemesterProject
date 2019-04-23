@@ -2,6 +2,11 @@
 // Created by Joel Courtney on 2019-04-17.
 //
 
+/*
+ * Similar to Empty, but more likely to contain
+ * enemies. Appears as a green 'w' in the dungeon.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GRASS_H
 #define OOAD_SEMESTERPROJECT_GRASS_H
 

@@ -2,6 +2,12 @@
 // Created by Joel Courtney on 2019-04-22.
 //
 
+/*
+ * Base class of anything that exists
+ * inside the terrain of a level.
+ * Players, enemies, and items.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_ACTOR_H
 #define OOAD_SEMESTERPROJECT_ACTOR_H
 

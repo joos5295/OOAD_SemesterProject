@@ -27,6 +27,7 @@
 
 class Display {
     static Color color;
+    static Color boxColor;
 
 public:
     static void init();
@@ -45,6 +46,8 @@ public:
 
     static void write(const CellMap& m);
     static void write(const CellMap& m, int x, int y);
+    
+    static void box(int,int,int,int);
 };
 
 #endif

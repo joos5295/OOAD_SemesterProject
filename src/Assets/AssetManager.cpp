@@ -154,6 +154,10 @@ void AssetManager::readTerrain(std::string s) {
                     cells.push_back(empty);
                     actors.push_back(EnemyFactory::ogre(width,H));
                     break;
+                case 'P':
+                    cells.push_back(empty);
+                    actors.push_back(EnemyFactory::phoenix(width,H));
+                    break;
                 default:
                     Debug::println("unrecognized terrain char");
                     exit(1);

@@ -2,6 +2,11 @@
 // Created by Joos5295 on 4/16/19.
 //
 
+/*
+ * FACADE wrapping the complicated functionality
+ * of actually running the game.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GAME_H
 #define OOAD_SEMESTERPROJECT_GAME_H
 

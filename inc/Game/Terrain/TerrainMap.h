@@ -2,6 +2,11 @@
 // Created by Joel Courtney on 2019-04-16.
 //
 
+/*
+ * A rectangular collection of Terrain cells.
+ * Represents the physical base of a level.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_TERRAINMAP_H
 #define OOAD_SEMESTERPROJECT_TERRAINMAP_H
 

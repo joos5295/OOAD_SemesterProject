@@ -2,6 +2,11 @@
 // Created by Joel Courtney on 2019-04-22.
 //
 
+/*
+ * Health pack class. Walking over a cell
+ * with this in it will restore health.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_HEALTH_H
 #define OOAD_SEMESTERPROJECT_HEALTH_H
 

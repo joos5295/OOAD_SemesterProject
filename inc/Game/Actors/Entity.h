@@ -2,6 +2,12 @@
 // Created by user on 4/16/19.
 //
 
+/*
+ * Entities are all creatures with health
+ * and the possibility of death.
+ * This includes the player and all enemies.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_ENTITY_H
 #define OOAD_SEMESTERPROJECT_ENTITY_H
 
@@ -23,6 +29,9 @@ public:
 
     void display(int, int) const;
     void display() const;
+    
+    int getEncounterArtWidth() const;
+    int getEncounterArtHeight() const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENTITY_H

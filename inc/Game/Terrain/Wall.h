@@ -2,6 +2,12 @@
 // Created by Joel Courtney on 2019-04-17.
 //
 
+/*
+ * The player cannot walk onto/into a wall.
+ * That's pretty much all this is for.
+ * Appears as a white block in the dungeon.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_WALL_H
 #define OOAD_SEMESTERPROJECT_WALL_H
 
