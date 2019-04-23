@@ -26,9 +26,6 @@ void Game::run(){
         Display::begin();
         activeState->display();     //have the active state draw itself
         Display::commit();
-        char c = Input::waitInput();     //get user input, to be updated to wait input method
-        if (c) {
-            activeState = activeState->update(c);  //call update on the current game state
-        }
+        activeState = activeState->update();  //call update on the current game state
     }
 }

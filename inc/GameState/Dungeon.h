@@ -18,7 +18,7 @@ public:
     ~Dungeon() override = default;
 
     void display() override;
-    GameState* update(char c) override;
+    GameState* update() override;
 
 };
 

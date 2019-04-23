@@ -9,6 +9,7 @@
 #include "GameState/GameStateFactory.h"
 #include "Debug/Debug.h"
 #include "Game/Actors/Health.h"
+#include "UI/Input.h"
 
 Dungeon::Dungeon(){
     level = new Level(1);
@@ -20,10 +21,11 @@ void Dungeon::display(){
     player.display();
 }
 
-GameState* Dungeon::update(char c) {
+GameState* Dungeon::update() {
     /* when you trigger an encounter, use
      * return GameStateManager::encounter(player, enemy, this);
      */
+    char c = Input::waitInput();
 
     Actor* actor = nullptr;
     switch (c) {
