@@ -35,6 +35,8 @@ public:
     //explicit Level(int);      //currently deprecated
     explicit Level(TerrainMap, std::vector<Actor*>, int, int);
 
+    int getSize();  //returns the number of terrain cells in the level
+
     void display() const;
     
     bool canMove(int,int);

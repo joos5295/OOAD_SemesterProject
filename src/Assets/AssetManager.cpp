@@ -119,16 +119,24 @@ void AssetManager::readTerrain(std::string s) {
     int pY = 0;
     int W = -1;     //accumulate the dimensions of the level
     int H = 0;
+
     std::ifstream file(path);
-    if (!file.is_open()) {
-        Debug::print("Asset File ");
-        Debug::print(s);
-        Debug::println(" not found.");
-        Debug::close();
-        exit(-1);
-    }
+
     std::vector<Terrain*> cells;
     std::vector<Actor*> actors;
+
+    if (!file.is_open()) {  //check if the level file exists, otherwise return an empty Level with a grid of size 0
+        //Debug::print("Asset File ");
+        //Debug::print(s);
+        //Debug::println(" not found.");
+        TerrainMap m(cells, 0, 0);      //the dungeon checks if the terrainMap is empty
+        Level l(m, actors, pX, pY);
+        levels.insert(std::make_pair(s,l));
+        //Debug::close();
+        //exit(-1);
+        return;
+    }
+
     std::string line;
     while (!file.eof()) {
         std::getline(file, line);

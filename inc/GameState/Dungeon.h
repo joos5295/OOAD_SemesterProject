@@ -10,8 +10,10 @@
 
 class Dungeon : public GameState {
 private:
-    Level* level;
+    Level* level = nullptr;
     Player player;
+    int nextLevel = 1;
+    void startNextLevel();  //loads the next level and increments current level if it exists, otherwise should declare victory.
 
 public:
     Dungeon();

@@ -12,7 +12,16 @@
 #include "UI/Input.h"
 
 Dungeon::Dungeon(){
-    level = AssetManager::loadTerrain(1);
+    //level = AssetManager::loadTerrain(1);
+    //player.moveTo(level->getStartX(),level->getStartY());
+    startNextLevel();
+}
+
+void Dungeon::startNextLevel() {    //automatically load the next level, and set up the game.
+    if(level != nullptr) {
+        delete(level);
+    }
+    level = AssetManager::loadTerrain(nextLevel++);
     player.moveTo(level->getStartX(),level->getStartY());
 }
 
@@ -25,6 +34,10 @@ GameState* Dungeon::update() {
     /* when you trigger an encounter, use
      * return GameStateManager::encounter(player, enemy, this);
      */
+
+    if(level->getSize() == 0){      //check if the level is a valid level, (would be better to do an update based system, but would be dificult to verify the initial level.
+        return(GameStateFactory::mainMenu(this));
+    }
     char c = Input::waitInput();
 
     Actor* actor = nullptr;

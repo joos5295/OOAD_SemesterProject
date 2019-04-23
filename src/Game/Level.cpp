@@ -14,9 +14,12 @@
 }*/
 
 Level::Level(TerrainMap t, std::vector<Actor*> a, int playerX, int playerY): terrain(std::move(t)), actors(std::move(a)) {
-    //terrain = t;
     pX = playerX;
     pY = playerY;
+}
+
+int Level::getSize() {
+    return(terrain.getRows() * terrain.getCols());
 }
 
 void Level::display() const {
