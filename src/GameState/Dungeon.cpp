@@ -10,12 +10,13 @@
 #include "Debug/Debug.h"
 #include "Game/Actors/Health.h"
 
-Dungeon::Dungeon() : level(1) {
-    player.moveTo(level.getStartX(),level.getStartY());
+Dungeon::Dungeon(){
+    level = new Level(1);
+    player.moveTo(level->getStartX(),level->getStartY());
 }
 
 void Dungeon::display(){
-    level.display();
+    level->display();
     player.display();
 }
 
@@ -27,27 +28,27 @@ GameState* Dungeon::update(char c) {
     Actor* actor = nullptr;
     switch (c) {
         case 'w':
-            if (level.canMove(player.getX(),player.getY()-1)) {
+            if (level->canMove(player.getX(),player.getY()-1)) {
                 player.move(0,-1);
-                actor = level.interact(player.getX(),player.getY());
+                actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 'a':
-            if (level.canMove(player.getX()-1,player.getY())) {
+            if (level->canMove(player.getX()-1,player.getY())) {
                 player.move(-1,0);
-                actor = level.interact(player.getX(),player.getY());
+                actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 's':
-            if (level.canMove(player.getX(),player.getY()+1)) {
+            if (level->canMove(player.getX(),player.getY()+1)) {
                 player.move(0,1);
-                actor = level.interact(player.getX(),player.getY());
+                actor = level->interact(player.getX(),player.getY());
             }
             break;
         case 'd':
-            if (level.canMove(player.getX()+1,player.getY())) {
+            if (level->canMove(player.getX()+1,player.getY())) {
                 player.move(1,0);
-                actor = level.interact(player.getX(),player.getY());
+                actor = level->interact(player.getX(),player.getY());
             }
             break;
         default:
