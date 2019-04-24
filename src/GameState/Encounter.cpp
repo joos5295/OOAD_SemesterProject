@@ -88,8 +88,8 @@ GameState* Encounter::update() {
                 player->takeDamage(enemy->attack());
                 transition = true;
             }
+            defenseSlider->update();
         }
-        defenseSlider->update();
     }
     return this;
 }
