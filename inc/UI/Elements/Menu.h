@@ -16,13 +16,18 @@ private:
     int numButtons = 0;
 
 public:
-    void addText(std::string, int, int);
+    void addText(std::string, int, int);    //default color is white text on a black background
     void addText(std::string, int, int, Color);
-    void addButton(std::string, int, int);
-    void addButton(std::string, int, int, Color);
+    void addButton(std::string, int, int);      //default color is white text on a black background
+    void addButton(std::string, int, int, Color);   //technically doesn't do anything different yet
 
     void display();
 
+    /*
+     * This function encapsulates getting a button "click" from the menu.
+     * It handles key input collection, traversing the button list, and collecting thc "click" Space press.
+     * The value returned is the index of the button based on the order that the buttons were added to the class.
+     */
     int getSelection();
 
 };

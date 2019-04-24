@@ -25,17 +25,17 @@ void Menu::addButton(std::string s, int x, int y, Color c) {
 }
 
 void Menu::display() {
-    for (Text t: texts){
+    for (Text t: texts){    //display all text objects
         t.display();
     }
-    for (Button b: buttons) {
+    for (Button b: buttons) {   //display all buttons
         b.display();
     }
 }
 
 int Menu::getSelection() {
-    if(numButtons > 0){
-        buttons[selected].deSelect();
+    if(numButtons > 0){     //check if there are any buttons to select
+        buttons[selected].deSelect();   //reset the buttons so that the first one is selected
         selected = 0;
         buttons[selected].select();
     }else{
@@ -45,25 +45,24 @@ int Menu::getSelection() {
 
     while(true) {
         display();
-        char c = Input::waitInput();
-        //Debug::println("got input" + std::to_string(c));
+        char c = Input::waitInput();    //run the menu interaction including selection and entering the button
         //stuff to handle input parsing
         switch (c) {
-            case 'w':
+            case 'w':       //move up menu
                 if (selected > 0) {
                     buttons[selected].deSelect();
                     selected--;
                     buttons[selected].select();
                 }
                 break;
-            case 's':
+            case 's':       //move down menu
                 if (selected < numButtons - 1) {
                     buttons[selected].deSelect();
                     selected++;
                     buttons[selected].select();
                 }
                 break;
-            case ' ':
+            case ' ':       //click current selected button
                 return (selected);
         }
     }

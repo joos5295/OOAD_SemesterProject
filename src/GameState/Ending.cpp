@@ -21,13 +21,13 @@ Ending::Ending(int e){
 void Ending::setupEnding(int e){
     switch(e){
         case 1:
-            m->addText("You Died", 2, 1);
+            m->addText("You Died", 2, 1);   //ending 1 for if the player died
             break;
         default:
-            m->addText("You Win!", 2, 1);
+            m->addText("You Win!", 2, 1);   //ending 0/default victory ending
             break;
     }
-    m->addButton("Restart", 2, 4);
+    m->addButton("Restart", 2, 4);      //options for what to do next
     m->addButton("Main Menu", 2, 5);
     m->addButton("Exit", 2, 6);
 }
@@ -36,7 +36,7 @@ void Ending::display() {
     m->display();
 }
 
-GameState* Ending::update() {
+GameState* Ending::update() {   // get button pressed from menu, and return the appropriate next game state
     int i = m->getSelection();
     switch (i){
         case 0:

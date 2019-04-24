@@ -12,14 +12,17 @@
 class Ending: public GameState{
 
 private:
-    Menu *m;
-    void setupEnding(int);
+    Menu *m;    //menu behavior is encapsulted in menu class
+        //the priamry purpose of the ending state is to take the result from the menu and decide what state to go to next,
+        // as well as general management of the state
+
+    void setupEnding(int);  //add the various text and button objects to the menu as necessary
 
 public:
 
     Ending();
     Ending(int);
-    ~Ending() override = default;
+    ~Ending() override = default;   //TODO clean up memory leaks
 
     void display() override;
     GameState* update() override;

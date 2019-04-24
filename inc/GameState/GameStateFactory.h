@@ -17,7 +17,7 @@ public:
     static GameState* dungeon(GameState*);
     static GameState* dungeon(Dungeon*,Encounter*);
     static GameState* encounter(Player*, Enemy*, Dungeon*);
-    static GameState* ending(int, GameState* old);
+    static GameState* ending(int, GameState* old);      //added ending state, int determines which ending (0/default: win, 1: die, others can be defined)
     static GameState* exit(GameState*);
 };
 
