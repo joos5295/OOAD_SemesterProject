@@ -3,18 +3,18 @@
 //
 
 #include <Debug/Debug.h>
-#include "GameState/Menu.h"
+#include "GameState/MainMenu.h"
 #include "UI/Elements/Button.h"
 #include "UI/Display.h"
 #include "GameState/GameStateFactory.h"
 #include "UI/Input.h"
 
-Menu::Menu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){
+MainMenu::MainMenu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){
     start.select();
     buttons = {start, exit};
 }
 
-void Menu::display() {
+void MainMenu::display() {
     //display the instructions
     instructions.display();
 
@@ -24,7 +24,7 @@ void Menu::display() {
     }
 }
 
-GameState* Menu::update() {
+GameState* MainMenu::update() {
 
     char c = Input::waitInput();
     //stuff to handle input parsing

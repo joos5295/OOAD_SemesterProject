@@ -7,15 +7,17 @@
 
 #include "Dungeon.h"
 #include "Encounter.h"
-#include "Menu.h"
+#include "MainMenu.h"
+#include "Ending.h"
 
 class GameStateFactory {
 public:
     static GameState* mainMenu();
     static GameState* mainMenu(GameState*);
-    static GameState* dungeon(Menu*);
+    static GameState* dungeon(GameState*);
     static GameState* dungeon(Dungeon*,Encounter*);
     static GameState* encounter(Player*, Enemy*, Dungeon*);
+    static GameState* ending(int, GameState* old);
     static GameState* exit(GameState*);
 };
 

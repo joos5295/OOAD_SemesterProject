@@ -34,7 +34,7 @@ GameState* Dungeon::update() {
 
     if(level->getSize() == 0){      //check if the level is a valid level,
         // (would be better to do an update based system, but would be difficult to verify the initial level.
-        return(GameStateFactory::mainMenu(this));
+        return(GameStateFactory::ending(0, this));
     }
 
     if(player.isAtGoal()){      //check if the player is at the goal of the level, if they are start the next level, and exit this cycle of update

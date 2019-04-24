@@ -7,14 +7,14 @@
 #include <thread>
 #include "Game/Game.h"
 #include "GameState/GameState.h"
-#include "GameState/Menu.h"
+#include "GameState/MainMenu.h"
 #include "UI/Input.h"
 #include "UI/Display.h"
 #include "GameState/GameStateFactory.h"
 
 //Initialize the game state to the menu state, maybe should do this in run instead
 Game::Game(){
-    //menu = Menu();
+    //menu = MainMenu();
     activeState = GameStateFactory::mainMenu();
 }
 

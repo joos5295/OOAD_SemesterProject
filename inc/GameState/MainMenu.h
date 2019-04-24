@@ -2,14 +2,14 @@
 // Created by user on 4/16/19.
 //
 
-#ifndef OOAD_SEMESTERPROJECT_MENU_H
-#define OOAD_SEMESTERPROJECT_MENU_H
+#ifndef OOAD_SEMESTERPROJECT_MAINMENU_H
+#define OOAD_SEMESTERPROJECT_MAINMENU_H
 
-#include <UI/Elements/Text.h>
 #include "GameState.h"
+#include <UI/Elements/Text.h>
 #include "UI/Elements/Button.h"
 
-class Menu: public GameState{
+class MainMenu: public GameState{
 
 private:
     Button start;
@@ -22,12 +22,12 @@ private:
     int buttonCount = 2;
 
 public:
-    Menu();
-    ~Menu() override = default;
+    MainMenu();
+    ~MainMenu() override = default;
 
     void display() override;
     GameState* update() override;
 
 };
 
-#endif //OOAD_SEMESTERPROJECT_MENU_H
+#endif //OOAD_SEMESTERPROJECT_MAINMENU_H

@@ -12,7 +12,7 @@
 
 #include "GameState/GameState.h"
 #include "GameState/Dungeon.h"
-#include "GameState/Menu.h"
+#include "GameState/MainMenu.h"
 #include "GameState/Encounter.h"
 
 class Game {
