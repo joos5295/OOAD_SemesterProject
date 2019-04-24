@@ -5,14 +5,17 @@
 #include "Game/Actors/Enemy.h"
 #include "Assets/AssetManager.h"
 
-Enemy::Enemy(int h, const Slider& s, int x, int y, const Glyph g, const GlyphMap* m) : Entity(h, x, y, g, m), slider(s) {}
-
-int Enemy::attack() const {
-    return attackDamage;
+Enemy::Enemy(int h, int d, const TimingSlider& as, const ReactionSlider& ds, int x, int y, const Glyph g, const GlyphMap* m)
+    : Entity(h, d, x, y, g, m), attackSlider(as), defenseSlider(ds) {
+    healthBar.setAlignment(false);
 }
 
-Slider Enemy::getSlider() const {
-    return slider;
+TimingSlider* Enemy::getAttackSlider() {
+    return &attackSlider;
+}
+
+ReactionSlider* Enemy::getDefenseSlider() {
+    return &defenseSlider;
 }
 
 bool Enemy::isFriendly() const {

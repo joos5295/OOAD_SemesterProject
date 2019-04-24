@@ -48,6 +48,8 @@ public:
     static void write(const CellMap& m, int x, int y);
     
     static void box(int,int,int,int);
+    
+    static void wait(int t);
 };
 
 #endif

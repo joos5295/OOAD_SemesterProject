@@ -11,19 +11,21 @@
 #ifndef OOAD_SEMESTERPROJECT_ENEMY_H
 #define OOAD_SEMESTERPROJECT_ENEMY_H
 
-#include <UI/Elements/Slider.h>
+#include <UI/Elements/TimingSlider.h>
+#include <UI/Elements/ReactionSlider.h>
 #include "Entity.h"
 
 class Enemy : public Entity {
 private:
     int attackDamage;
-    Slider slider;
+    TimingSlider attackSlider;
+    ReactionSlider defenseSlider;
     
 public:
-    Enemy(int,const Slider&,int,int,const Glyph,const GlyphMap*);
+    Enemy(int h, int d, const TimingSlider&, const ReactionSlider&,int,int,const Glyph,const GlyphMap*);
 
-    int attack() const;
-    Slider getSlider() const;
+    TimingSlider* getAttackSlider();
+    ReactionSlider* getDefenseSlider();
     
     bool isFriendly() const override;
     Enemy* generateEncounter();

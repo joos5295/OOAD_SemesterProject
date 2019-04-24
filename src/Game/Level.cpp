@@ -7,6 +7,7 @@
 #include "Debug/Debug.h"
 #include "UI/Display.h"
 #include "Game/Actors/EnemyFactory.h"
+#include <algorithm>
 
 /*Level::Level(int n) : terrain(AssetManager::loadTerrain("level-" + std::to_string(n) + ".txt")) {
     Actor* enemy = EnemyFactory::ogre(2,2);
@@ -49,4 +50,9 @@ int Level::getStartX() const {
 
 int Level::getStartY() const {
     return pY;
+}
+
+void Level::removeActor(Actor* a) {
+    delete a;
+    actors.erase(std::remove(actors.begin(), actors.end(), a), actors.end());
 }

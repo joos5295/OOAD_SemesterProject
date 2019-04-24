@@ -45,6 +45,8 @@ public:
     
     int getStartX() const;
     int getStartY() const;
+    
+    void removeActor(Actor*);
 };
 
 #endif //OOAD_SEMESTERPROJECT_LEVEL_H

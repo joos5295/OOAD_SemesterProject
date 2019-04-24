@@ -7,10 +7,11 @@
 
 class UIElement {
 protected:
-    int x;
-    int y;
+    int x = -1;
+    int y = -1;
     
 public:
+    UIElement() = default;
     UIElement(int,int);
     
     virtual void display() const = 0;

@@ -29,7 +29,7 @@ void Display::begin() {
 
 void Display::commit() {
     refresh();
-    std::this_thread::sleep_for(std::chrono::milliseconds(50));
+    std::this_thread::sleep_for(std::chrono::milliseconds(40));
 }
 
 void Display::write(const Cell& g) {
@@ -79,4 +79,8 @@ void Display::box(int w, int h, int x, int y) {
     mvaddch(y+h,x,'+');
     mvaddch(y,x+w,'+');
     mvaddch(y+h,x+w,'+');
+}
+
+void Display::wait(int t) {
+    std::this_thread::sleep_for(std::chrono::milliseconds(t));
 }

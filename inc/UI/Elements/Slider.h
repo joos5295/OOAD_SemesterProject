@@ -1,5 +1,5 @@
 //
-// Created by joel on 4/23/19.
+// Created by joel on 4/24/19.
 //
 
 #ifndef OOAD_SEMESTERPROJECT_SLIDER_H
@@ -8,27 +8,22 @@
 #include "UIElement.h"
 
 class Slider : public UIElement {
-    int width; 
-    int rangeStart;
-    int rangeEnd;
-    
-    int pos;
-    bool active;
+protected:
+    int width;
+    int pos = 0;
     
 public:
-    Slider();
-    Slider(int,int,int);
-    Slider(int,int,int,int,int);
-    ~Slider() = default;
+    explicit Slider(int w);
+    Slider(int x, int y, int w);
     
-    void update();
+    virtual bool success() const = 0;
+    
+    void reset();
+    
+    virtual void update() = 0;
     
     void display() const override;
-    
-    void stop();
-    bool success() const;
-    
-    void setAttributes(int w,int rs,int re);
+    virtual void displayInternals() const = 0;
 };
 
 #endif //OOAD_SEMESTERPROJECT_SLIDER_H

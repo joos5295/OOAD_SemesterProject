@@ -22,6 +22,7 @@ public:
     void display() override;
     GameState* update() override;
 
+    void removeEnemy(Enemy*);
 };
 
 #endif //OOAD_SEMESTERPROJECT_DUNGEON_H

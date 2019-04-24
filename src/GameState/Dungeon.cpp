@@ -87,3 +87,7 @@ GameState* Dungeon::update() {
     }
     return this;
 }
+
+void Dungeon::removeEnemy(Enemy* e) {
+    level->removeActor((Actor*) e);
+}
