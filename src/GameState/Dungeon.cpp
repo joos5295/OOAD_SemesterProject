@@ -81,6 +81,7 @@ GameState* Dungeon::update() {
     if (actor) {
         if (actor->isFriendly()) {
             player.heal(((Health*)actor)->getHealth());
+            level->removeActor(actor);
         } else {
             return GameStateFactory::encounter(&player, (Enemy*) actor, this);
         }

@@ -24,6 +24,8 @@ public:
     
     int getX() const;
     int getY() const;
+    
+    virtual void display() const;
 };
 
 #endif //OOAD_SEMESTERPROJECT_ACTOR_H

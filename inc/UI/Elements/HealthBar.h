@@ -9,12 +9,11 @@
 
 class HealthBar : public UIElement {
     int health;
-    int maxHealth;
     bool good;
     
 public:
-    HealthBar(int max);
-    HealthBar(int max, bool good);
+    explicit HealthBar(int start);
+    explicit HealthBar(int start, bool good);
     HealthBar(int x, int y, int max, bool good);
     ~HealthBar() = default;
     

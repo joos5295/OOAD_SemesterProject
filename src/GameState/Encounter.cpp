@@ -55,6 +55,7 @@ GameState* Encounter::update() {
     if (wait && !transition) {
         Display::wait(wait);
         wait = 0;
+        while (Input::getInput());
         return this;
     }
     if (transition) {

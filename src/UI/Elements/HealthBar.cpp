@@ -6,9 +6,9 @@
 #include <UI/Basic/Glyph.h>
 #include "UI/Elements/HealthBar.h"
 
-HealthBar::HealthBar(int max) : health(max), maxHealth(max), good(true) {}
-HealthBar::HealthBar(int max, bool good) : health(max), maxHealth(max), good(good) {}
-HealthBar::HealthBar(int x, int y, int max, bool good) : UIElement(x, y), health(max), maxHealth(max), good(good) {}
+HealthBar::HealthBar(int start) : health(start), good(true) {}
+HealthBar::HealthBar(int start, bool good) : health(start), good(good) {}
+HealthBar::HealthBar(int x, int y, int start, bool good) : UIElement(x, y), health(start), good(good) {}
 
 void HealthBar::setAlignment(bool g) {
     good = g;

@@ -11,6 +11,7 @@
 #include "Game/Terrain/Empty.h"
 #include "Game/Terrain/Goal.h"
 #include "Game/Actors/EnemyFactory.h"
+#include "Game/Actors/ItemFactory.h"
 
 std::unordered_map<std::string,GlyphMap> AssetManager::glyphMaps;
 std::unordered_map<std::string,Level> AssetManager::levels;
@@ -155,7 +156,7 @@ void AssetManager::readTerrain(std::string s) {
                 case 'g':
                     cells.push_back(grass);
                     break;
-                case 'e':
+                case 'E':
                     cells.push_back(goal);
                     break;
                 case 'S':
@@ -164,12 +165,16 @@ void AssetManager::readTerrain(std::string s) {
                     cells.push_back(empty);
                     break;
                 case 'O':
-                    cells.push_back(empty);
+                    cells.push_back(grass);
                     actors.push_back(EnemyFactory::ogre(width,H));
                     break;
                 case 'P':
-                    cells.push_back(empty);
+                    cells.push_back(grass);
                     actors.push_back(EnemyFactory::phoenix(width,H));
+                    break;
+                case 'H':
+                    cells.push_back(empty);
+                    actors.push_back(ItemFactory::health(width,H));
                     break;
                 default:
                     Debug::println("unrecognized terrain char");

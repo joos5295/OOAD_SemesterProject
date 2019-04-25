@@ -6,7 +6,7 @@
 #include "Debug/Debug.h"
 #include "Assets/AssetManager.h"
 
-Player::Player() : Entity(10, 1, 0, 0, Glyph('I', Color::Green), AssetManager::loadArt("knight.txt")) {
+Player::Player() : Entity(1, 1, 0, 0, Glyph('I', Color::Green), AssetManager::loadArt("knight.txt")) {
     healthBar.setAlignment(true);
 }
 
@@ -25,6 +25,7 @@ void Player::moveTo(int x,int y) {
 
 void Player::heal(int h) {
     health += h;
+    healthBar.setHealth(health);
 }
 
 void Player::enterGoal() {

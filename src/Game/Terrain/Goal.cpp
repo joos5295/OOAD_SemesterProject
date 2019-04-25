@@ -11,7 +11,7 @@ Terrain* Goal::getInstance() {
 }
 
 char Goal::getChar() const {
-    return '+';
+    return 'E';
 }
 
 Color Goal::getColor() const {

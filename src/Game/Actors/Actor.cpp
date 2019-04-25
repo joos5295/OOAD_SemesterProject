@@ -19,3 +19,5 @@ int Actor::getX() const {
 int Actor::getY() const {
     return posY;
 }
+
+void Actor::display() const {}

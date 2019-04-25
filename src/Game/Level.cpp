@@ -25,6 +25,9 @@ int Level::getSize() {
 
 void Level::display() const {
     Display::write(terrain);
+    for (Actor* a : actors) {
+        a->display();
+    }
 }
 
 bool Level::canMove(int x, int y) {
