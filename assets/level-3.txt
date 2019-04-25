@@ -1,29 +1,29 @@
 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-w               E               w
+w     O       w E w       O     w
+w     w  w    w   w    w  w     w
+w     w www   wPPPw   www w     w
+w     w  w             w  w     w
+w     w                   w     w
+w     w  w             w  w     w
+w     w www           www w     w
+w     w  w             w  w     w
+wH    w                   w    Hw
+wwwwwwwwwwww         wwwwwwwwwwww
+w     P    w         w    P     w
+w     w    w  wwwww  w    w     w
+w     w    w         w    w     w
+w     w    www     www    w     w
+wH    w      P     P      w    Hw
+wwwwwwwOwwwwwwwwwwwwwwwwwOwwwwwww
 w                               w
 w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-w                               w
-wwwwwwwwwwwwwwwOOOwwwwwwwwwwwwwww
+wwwwwwwwwwwwwww   wwwwwwwwwwwwwww
+w             w   w             w
+w             w   w             w
+w             P   P             w
+w             w   w             w
+wH            w   w            Hw
+wwwwwwwwwwwwwwwO Owwwwwwwwwwwwwww
 wwwwwwwwwwwwwwwOOOwwwwwwwwwwwwwww
 wgggggggggggggg   ggggggggggggggw
 wgggggggggggggg   ggggggggggggggw

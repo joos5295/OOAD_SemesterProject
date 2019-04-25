@@ -165,11 +165,11 @@ void AssetManager::readTerrain(std::string s) {
                     cells.push_back(empty);
                     break;
                 case 'O':
-                    cells.push_back(grass);
+                    cells.push_back(empty);
                     actors.push_back(EnemyFactory::ogre(width,H));
                     break;
                 case 'P':
-                    cells.push_back(grass);
+                    cells.push_back(empty);
                     actors.push_back(EnemyFactory::phoenix(width,H));
                     break;
                 case 'H':
