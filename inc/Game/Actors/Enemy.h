@@ -28,7 +28,6 @@ public:
     ReactionSlider* getDefenseSlider();
     
     bool isFriendly() const override;
-    Enemy* generateEncounter();
 };
 
 #endif //OOAD_SEMESTERPROJECT_ENEMY_H

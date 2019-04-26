@@ -21,7 +21,3 @@ ReactionSlider* Enemy::getDefenseSlider() {
 bool Enemy::isFriendly() const {
     return false;
 }
-
-Enemy* Enemy::generateEncounter() {
-    return this;
-}
