@@ -22,7 +22,7 @@ public:
 
     Ending();
     Ending(int);
-    ~Ending() override = default;   //TODO clean up memory leaks
+    ~Ending() override;
 
     void display() override;
     GameState* update() override;

@@ -7,23 +7,18 @@
 
 #include "GameState.h"
 #include <UI/Elements/Text.h>
+#include <UI/Elements/Menu.h>
 #include "UI/Elements/Button.h"
+
 
 class MainMenu: public GameState{
 
 private:
-    Button start;
-    Button exit;
-    std::vector<Button> buttons;
-
-    Text instructions;
-
-    int buttonId = 0;
-    int buttonCount = 2;
+    Menu *m;
 
 public:
     MainMenu();
-    ~MainMenu() override = default;
+    ~MainMenu() override;
 
     void display() override;
     GameState* update() override;

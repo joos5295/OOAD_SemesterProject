@@ -48,3 +48,7 @@ GameState* Ending::update() {   // get button pressed from menu, and return the 
     }
     return(this);
 }
+
+Ending::~Ending(){
+    delete(m);
+}

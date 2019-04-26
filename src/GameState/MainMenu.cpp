@@ -9,48 +9,32 @@
 #include "GameState/GameStateFactory.h"
 #include "UI/Input.h"
 
-MainMenu::MainMenu() : start("Start",2, 3), exit("Exit", 2, 5), instructions("Move/select with 'wasd', enter selected button with 'Space'.", 2, 1, Color(Color::Cyan, Color::Black)){
-    start.select();
-    buttons = {start, exit};
+MainMenu::MainMenu(){
+    m = new Menu();
+    m->addText("Welcome to Dungeon!", 2, 1, Color(Color::Cyan, Color::Black));
+    m->addText("Move/select with 'wasd', enter selected button with 'Space'.", 2, 3);
+    m->addText("When attacking press 'Space' over the blue region to hit.", 2, 4);
+    m->addText("When defending press 'Space' to stop the red arrow before the end of the bar.", 2, 5);
+    m->addButton("Start",2, 7);
+    m->addButton("Exit", 2, 9);
+
 }
 
 void MainMenu::display() {
-    //display the instructions
-    instructions.display();
-
-    //display the buttons
-    for (Button b: buttons) {
-        b.display();
-    }
+    m->display();
 }
 
 GameState* MainMenu::update() {
-
-    char c = Input::waitInput();
-    //stuff to handle input parsing
-    switch(c) {
-        case 'w':
-            if( buttonId > 0) {
-                buttons[buttonId].deSelect();
-                buttonId--;
-                buttons[buttonId].select();
-            }
-            break;
-        case 's':
-            if( buttonId < buttonCount-1) {
-                buttons[buttonId].deSelect();
-                buttonId++;
-                buttons[buttonId].select();
-            }
-            break;
-        case ' ':
-            if(buttonId == 0) {
-                return GameStateFactory::dungeon(this);
-            } else if(buttonId == 1) {
-                return GameStateFactory::exit(this);
-            }
-        default:
-            break;
+    int i = m->getSelection();
+    switch (i){
+        case 0:
+            return GameStateFactory::dungeon(this);
+        case 1:
+            return GameStateFactory::exit(this);
     }
     return this;
+}
+
+MainMenu::~MainMenu(){
+    delete(m);
 }

@@ -16,6 +16,7 @@ private:
     int numButtons = 0;
 
 public:
+
     void addText(std::string, int, int);    //default color is white text on a black background
     void addText(std::string, int, int, Color);
     void addButton(std::string, int, int);      //default color is white text on a black background
