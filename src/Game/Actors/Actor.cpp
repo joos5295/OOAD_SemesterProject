@@ -7,11 +7,6 @@
 
 Actor::Actor(int x, int y) : posX(x), posY(y) {}
 
-bool Actor::isFriendly() const {
-    Debug::println("Asked blank if friendly");
-    return true;
-}
-
 int Actor::getX() const {
     return posX;
 }

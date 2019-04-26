@@ -20,7 +20,7 @@ protected:
     
 public:
     Actor(int,int);
-    virtual bool isFriendly() const;
+    virtual bool isFriendly() const = 0;
     
     int getX() const;
     int getY() const;

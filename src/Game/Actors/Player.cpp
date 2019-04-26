@@ -41,3 +41,7 @@ void Player::enterLevel() {
 bool Player::isAtGoal() {
     return(atGoal);
 }
+
+bool Player::isFriendly() const {
+    return true;
+}

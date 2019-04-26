@@ -29,7 +29,9 @@ public:
 
     bool isAtGoal();        //for keeping track of whether the player is at the end of the level.
                         //makes use of Terrain Cells natural enter function
-                        //slightly ugly due to path of information Cell to Player to Dungeon, but would be difficult to improve
+                        //slightly ugly due to path of information Cell to Player to Dungeon, but would be difficult to improve.
+    bool isFriendly() const override; 
+                        
 
 private:
     bool atGoal;
