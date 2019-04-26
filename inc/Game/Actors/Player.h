@@ -17,8 +17,8 @@ class Player : public Entity {
 public:
     explicit Player();
 
-    int getX();
-    int getY();
+    int getX() const;
+    int getY() const;
     void move(int,int);
     void moveTo(int,int);
     
@@ -27,7 +27,7 @@ public:
     void enterGoal();
     void enterLevel();
 
-    bool isAtGoal();        //for keeping track of whether the player is at the end of the level.
+    bool isAtGoal() const;        //for keeping track of whether the player is at the end of the level.
                         //makes use of Terrain Cells natural enter function
                         //slightly ugly due to path of information Cell to Player to Dungeon, but would be difficult to improve.
     bool isFriendly() const override; 

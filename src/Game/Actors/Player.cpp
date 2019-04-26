@@ -10,8 +10,13 @@ Player::Player() : Entity(1, 1, 0, 0, Glyph('I', Color::Green), AssetManager::lo
     healthBar.setAlignment(true);
 }
 
-int Player::getX() {return posX;}
-int Player::getY() {return posY;}
+int Player::getX() const {
+    return posX;
+}
+
+int Player::getY() const {
+    return posY;
+}
 
 void Player::move(int dx, int dy) {
     posX += dx;
@@ -38,8 +43,8 @@ void Player::enterLevel() {
     atGoal = false;
 }
 
-bool Player::isAtGoal() {
-    return(atGoal);
+bool Player::isAtGoal() const {
+    return atGoal;
 }
 
 bool Player::isFriendly() const {
