@@ -22,7 +22,7 @@ private:
     ReactionSlider defenseSlider;
     
 public:
-    Enemy(int h, int d, const TimingSlider&, const ReactionSlider&,int,int,const Glyph,const GlyphMap*);
+    Enemy(int x, int y, int h, int d, const TimingSlider&, const ReactionSlider&,const Glyph,const GlyphMap*);
 
     TimingSlider* getAttackSlider();
     ReactionSlider* getDefenseSlider();
