@@ -14,6 +14,9 @@ Follow the directions in game.
 
 ### Credits:
 We did not write:
-	the ncurses library
-	the ascii art for the knight, ogre, and phoenix files
-	the code template used for singleton classes
+
+	1. the ncurses library
+	
+	2. the ascii art for the knight, ogre, and phoenix files
+	
+	3. the code template used for singleton classes
