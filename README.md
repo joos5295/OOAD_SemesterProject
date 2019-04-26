@@ -18,7 +18,7 @@ We did not write:
 
 	1. the ncurses library (https://www.gnu.org/software/ncurses/ncurses.html)
 	
-	2. the ascii art for the knight, ogre, and phoenix files (http://ascii.co.uk/art/ogre, http://ascii.co.uk/art/ogre)
+	2. the ascii art for the knight, ogre, and phoenix files (http://ascii.co.uk/art/ogre, https://www.asciiart.eu/)
 	
 	3. the code template used for singleton classes (https://stackoverflow.com/questions/1008019/c-singleton-design-pattern)
 
