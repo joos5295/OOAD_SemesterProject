@@ -33,7 +33,7 @@ public:
     bool isDead() const;
 
     void display(int, int) const;
-    void display() const;
+    void display() const override;
     
     int getEncounterArtWidth() const;
     int getEncounterArtHeight() const;
