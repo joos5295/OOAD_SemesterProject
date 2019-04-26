@@ -2,6 +2,12 @@
 // Created by Joel Courtney on 2019-04-09.
 //
 
+/*
+ * A simple implementation of Cell that stores and returns
+ * a character and color. These are not hardcoded, unlike the
+ * char and color used by terrain types.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GLYPH_H
 #define OOAD_SEMESTERPROJECT_GLYPH_H
 

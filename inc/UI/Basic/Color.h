@@ -6,6 +6,7 @@
  * Responsible for foreground / background color information.
  * Outside of the Glyph and Display classes, all that matters
  * is the Color::Value enum, which is accessed using Color::Red, etc.
+ * This interfaces with NCurses' color pair system to keep track of colors.
  */
 
 #ifndef OOAD_SEMESTERPROJECT_COLOR_H

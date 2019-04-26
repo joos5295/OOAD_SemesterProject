@@ -2,6 +2,12 @@
 // Created by joel on 4/10/19.
 //
 
+/*
+ * Simple implementation of the CellMap interface.
+ * Just a composition of Glyphs into a rectangle
+ * which can be displayed.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GLYPHMAP_H
 #define OOAD_SEMESTERPROJECT_GLYPHMAP_H
 

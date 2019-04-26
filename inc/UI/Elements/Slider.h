@@ -2,6 +2,11 @@
 // Created by joel on 4/24/19.
 //
 
+/*
+ * Provides some high-level functionality for all sliders.
+ * Cannot be instantiated.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_SLIDER_H
 #define OOAD_SEMESTERPROJECT_SLIDER_H
 

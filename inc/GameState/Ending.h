@@ -2,6 +2,12 @@
 // Created by user on 2019-04-23.
 //
 
+/*
+ * Handles the end screen. Either victory or defeat messages.
+ * Provides a prompt to either restart, go to the main menu,
+ * or quit.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_ENDING_H
 #define OOAD_SEMESTERPROJECT_ENDING_H
 

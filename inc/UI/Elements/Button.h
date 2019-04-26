@@ -2,6 +2,12 @@
 // Created by user on 2019-04-19.
 //
 
+/*
+ * Buttons are selectable and triggerable objects
+ * in menus. E.g. the start and exit buttons in the
+ * main menu.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_BUTTON_H
 #define OOAD_SEMESTERPROJECT_BUTTON_H
 

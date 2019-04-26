@@ -2,6 +2,13 @@
 // Created by user on 4/16/19.
 //
 
+/*
+ * The encounter state manages the combat portion of
+ * gameplay. It alternates between attack and defense.
+ * If the player dies it generates the Ending state.
+ * If the enemy dies it restores the dungeon state.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_ENCOUNTER_H
 #define OOAD_SEMESTERPROJECT_ENCOUNTER_H
 

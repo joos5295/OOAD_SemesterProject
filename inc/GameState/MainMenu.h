@@ -1,6 +1,11 @@
 //
-// Created by user on 4/16/19.
+// Created by Scott Weygandt on 4/16/19.
 //
+
+/*
+ * Handles the main menu navigation and display.
+ * Players can either start a game or exit.
+ */
 
 #ifndef OOAD_SEMESTERPROJECT_MAINMENU_H
 #define OOAD_SEMESTERPROJECT_MAINMENU_H

@@ -2,6 +2,12 @@
 // Created by Joel Courtney on 2019-04-21.
 //
 
+/*
+ * Handles creation and deletion of GameStates.
+ * The reason this is useful is to avoid forcing
+ * GameStates to "delete this".
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GAMESTATEFACTORY_H
 #define OOAD_SEMESTERPROJECT_GAMESTATEFACTORY_H
 

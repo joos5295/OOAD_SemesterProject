@@ -3,6 +3,9 @@
 //
 
 /*
+ * Interfaces with ncurses to write colored characters
+ * to the screen.
+ * 
  * Typical usage of Display:
  *
  *  Display::init()

@@ -2,6 +2,14 @@
 // Created by joel on 4/24/19.
 //
 
+/*
+ * When updated, it moves an arrow across the bar.
+ * The user must press the space bar before it reaches
+ * the end. Getting input and dealing damange are not
+ * part of the responsibilites of the slider; just deciding whether
+ * or not damage should be dealt.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_REACTIONSLIDER_H
 #define OOAD_SEMESTERPROJECT_REACTIONSLIDER_H
 

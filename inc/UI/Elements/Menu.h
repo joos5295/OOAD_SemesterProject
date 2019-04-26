@@ -2,6 +2,11 @@
 // Created by user on 2019-04-23.
 //
 
+/*
+ * Encapsulates the text and buttons that comprise a menu UI.
+ * Used for the main menu and the ending menu.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_MENU_H
 #define OOAD_SEMESTERPROJECT_MENU_H
 

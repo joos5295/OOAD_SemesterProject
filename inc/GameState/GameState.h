@@ -2,10 +2,15 @@
 // Created by user on 4/16/19.
 //
 
+/*
+ * Encapsulates the overall state the program is in.
+ * See subclasses for details.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_GAMESTATE_H
 #define OOAD_SEMESTERPROJECT_GAMESTATE_H
 
-class GameState{
+class GameState {
 public:
     virtual ~GameState() = default;
 

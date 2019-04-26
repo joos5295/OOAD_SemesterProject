@@ -2,6 +2,12 @@
 // Created by Joel Courtney on 2019-04-16.
 //
 
+/*
+ * Composition of Cells to form a rectangle of
+ * cells. This is useful for ascii art or displaying
+ * terrain.
+ */
+
 #ifndef OOAD_SEMESTERPROJECT_CELLMAP_H
 #define OOAD_SEMESTERPROJECT_CELLMAP_H
 
