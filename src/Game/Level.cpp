@@ -14,12 +14,10 @@
     actors.push_back(enemy);
 }*/
 
-Level::Level(TerrainMap t, std::vector<Actor*> a, int playerX, int playerY): terrain(std::move(t)), actors(std::move(a)) {
-    pX = playerX;
-    pY = playerY;
-}
+Level::Level(TerrainMap t, std::vector<Actor*> a, int playerX, int playerY): terrain(std::move(t)), actors(std::move(a)),
+    pX(playerX), pY(playerY) {}
 
-int Level::getSize() {
+int Level::getSize() const {
     return(terrain.getRows() * terrain.getCols());
 }
 
@@ -30,7 +28,7 @@ void Level::display() const {
     }
 }
 
-bool Level::canMove(int x, int y) {
+bool Level::canMove(int x, int y) const {
     return terrain.getTerrain(x,y)->canEnter();
 }
 

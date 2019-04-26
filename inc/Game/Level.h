@@ -27,7 +27,6 @@ class Level {
     const TerrainMap terrain;
     std::vector<Actor*> actors;
 
-private:
     int pX;
     int pY;
 
@@ -35,11 +34,11 @@ public:
     //explicit Level(int);      //currently deprecated
     explicit Level(TerrainMap, std::vector<Actor*>, int, int);
 
-    int getSize();  //returns the number of terrain cells in the level
+    int getSize() const;  //returns the number of terrain cells in the level
 
     void display() const;
     
-    bool canMove(int,int);
+    bool canMove(int,int) const;
     void enter(int, int, Player*);      //players now enter each terrain cell they step on
     Actor* interact(int,int);
     

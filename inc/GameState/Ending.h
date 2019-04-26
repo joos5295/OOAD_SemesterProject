@@ -9,7 +9,7 @@
 #include "GameState.h"
 #include <UI/Elements/Menu.h>
 
-class Ending: public GameState{
+class Ending: public GameState {
 
 private:
     Menu *m;    //menu behavior is encapsulted in menu class
@@ -21,7 +21,7 @@ private:
 public:
 
     Ending();
-    Ending(int);
+    explicit Ending(int);
     ~Ending() override;
 
     void display() const override;

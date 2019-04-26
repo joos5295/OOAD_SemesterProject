@@ -11,7 +11,7 @@
 #include "UI/Elements/Button.h"
 
 
-class MainMenu: public GameState{
+class MainMenu: public GameState {
 
 private:
     Menu *m;
