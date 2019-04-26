@@ -14,7 +14,7 @@ class HealthBar : public UIElement {
 public:
     explicit HealthBar(int start);
     explicit HealthBar(int start, bool good);
-    HealthBar(int x, int y, int max, bool good);
+    HealthBar(int x, int y, int start, bool good);
     ~HealthBar() = default;
     
     void setAlignment(bool);
