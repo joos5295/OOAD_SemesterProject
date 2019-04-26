@@ -20,7 +20,7 @@ public:
     MainMenu();
     ~MainMenu() override;
 
-    void display() override;
+    void display() const override;
     GameState* update() override;
 
 };

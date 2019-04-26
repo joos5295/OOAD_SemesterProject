@@ -29,7 +29,7 @@ public:
     explicit Encounter(Player*, Enemy*, Dungeon*);
     ~Encounter() override = default;
 
-    void display() override;
+    void display() const override;
     GameState* update() override;
 };
 

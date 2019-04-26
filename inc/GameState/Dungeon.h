@@ -19,7 +19,7 @@ public:
     Dungeon();
     ~Dungeon() override = default;
 
-    void display() override;
+    void display() const override;
     GameState* update() override;
 
     void removeEnemy(Enemy*);

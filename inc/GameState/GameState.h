@@ -9,7 +9,7 @@ class GameState{
 public:
     virtual ~GameState() = default;
 
-    virtual void display() = 0;
+    virtual void display() const = 0;
     virtual GameState* update() = 0;
 };
 

@@ -32,7 +32,7 @@ void Ending::setupEnding(int e){
     m->addButton("Exit", 2, 6);
 }
 
-void Ending::display() {
+void Ending::display() const {
     m->display();
 }
 

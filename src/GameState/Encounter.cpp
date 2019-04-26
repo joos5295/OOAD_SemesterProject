@@ -28,7 +28,7 @@ Encounter::Encounter(Player* p, Enemy* e, Dungeon* d) : player(p), enemy(e), dun
     enemy->placeHealthBar(maxWidth+2, maxHeight -1);
 }
 
-void Encounter::display() {
+void Encounter::display() const {
     int playerWidth = player->getEncounterArtWidth();
     int playerHeight = player->getEncounterArtHeight();
     int enemyWidth = enemy->getEncounterArtWidth();

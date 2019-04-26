@@ -22,7 +22,7 @@ void Dungeon::startNextLevel() {    //automatically load the next level, and set
     player.moveTo(level->getStartX(),level->getStartY());
 }
 
-void Dungeon::display(){
+void Dungeon::display() const {
     level->display();
     player.display();
 }

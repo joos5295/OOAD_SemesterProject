@@ -20,7 +20,7 @@ MainMenu::MainMenu(){
 
 }
 
-void MainMenu::display() {
+void MainMenu::display() const {
     m->display();
 }
 
